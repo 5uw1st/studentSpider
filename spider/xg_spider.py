@@ -1,18 +1,21 @@
 # coding:utf-8
 import time
+import random
 
-from studentSpider.utils import *
-from studentSpider.data_type import *
+from utils import *
+from data_type import *
+from spider.base_spider import BaseSpider
 
 
-class XGSpider(object):
+class XGSpider(BaseSpider):
+    """
+    学工网爬虫
+    """
     def __init__(self):
-        self.__username = None
-        self.__password = None
-        self.__cookies = {}
+        super(XGSpider, self).__init__()
         self._index_url = "http://xsc.cuit.edu.cn/SystemForm/main.htm"
         self._login_url = "http://xsc.cuit.edu.cn/UserLogin.html"
-        self.code_file = 'code.png'
+        self.code_file = 'xg_code.png'
 
     @handle_exception()
     def login(self, username, password):
@@ -25,7 +28,7 @@ class XGSpider(object):
         self.__password = password
         page = download(self._login_url)
         if not page:
-            log("打开登录页面失败:%s" % self.username, err_code=LOGIN_PAGE_ERROR)
+            log("打开登录页面失败:%s" % self.__username, err_code=LOGIN_PAGE_ERROR)
             return False
         # 准备post表单数据
         view_state = xpath_match(page, '//input[@id="__VIEWSTATE"]/@value')
@@ -42,8 +45,8 @@ class XGSpider(object):
             "UserName": self.__username,
             "UserPass": self.__password,
             "CheckCode": check_code,
-            "Btn_OK.x": "51",
-            "Btn_OK.y": "37"
+            "Btn_OK.x": random.randint(20, 50),
+            "Btn_OK.y": random.randint(20, 50)
         }
         page_info = download(self._login_url, data=post_data, get_cookies=True)
         if not page_info:
@@ -74,7 +77,8 @@ class XGSpider(object):
         """
         code_url = "http://xsc.cuit.edu.cn/" + xpath_match(page, '//img[@border="0"]/@src') \
                    or "http://xsc.cuit.edu.cn/default3.html"
-        code_body = download(code_url, is_img=True)
+        referer = self._login_url
+        code_body = download(code_url, is_img=True, referer=referer)
         if not code_body:
             return
         with open(self.code_file, 'wb') as f:
@@ -82,3 +86,10 @@ class XGSpider(object):
         code = input("-->请输入验证码:")
         log("验证码:%s" % code)
         return code
+
+    def get_user_info(self):
+        """
+        获取用户信息
+        :return: 
+        """
+        pass

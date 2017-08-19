@@ -2,12 +2,9 @@
 import pymongo
 from pymongo.errors import ConnectionFailure
 
-MONGO_SETTINGS = {
-    "host": "127.0.0.1",
-    "port": 27017,
-    "username": "",
-    "password": ""
-}
+from config import LocalConfig
+
+cf = LocalConfig()
 
 
 def catch_mongo_except(func):
@@ -32,9 +29,12 @@ class MongoDB(object):
     mongodb数据库管理
     """
     def __init__(self, db_name, table):
+        option = "DB_MONGODB"
+        self.__host = cf.get_value(option, "HOST")
+        self.__port = cf.get_value(option, "PORT")
+
         db_setting = MONGO_SETTINGS[db_name]
-        self.mongo_client = pymongo.MongoClient(db_setting["host"], db_setting["port"],
-                                                connect=False)
+        self.mongo_client = pymongo.MongoClient(self.__host, self.__port, connect=False)
         self.db = self.mongo_client[db_name]
 
         username = db_setting["username"]

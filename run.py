@@ -1,6 +1,7 @@
 # coding:utf-8
 
-from studentSpider.spider.xg_spider import XGSpider
+from spider.xg_spider import XGSpider
+from spider.jwc_spider import JWCSpider
 
 
 def run():
@@ -20,7 +21,8 @@ def run():
 
     user = "2013123069"
     pwd = "19940807qQ"
-    t = XGSpider()
+    # t = XGSpider()
+    t = JWCSpider()
     isSucc = t.login(user, pwd)
     print(isSucc)
 

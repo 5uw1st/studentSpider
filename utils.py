@@ -1,11 +1,12 @@
 # coding:utf-8
 import logging
 import re
+from urllib.parse import quote, unquote
 
 from lxml.html import etree
-from requests import get as http_get, post as http_post
+from requests import session
 
-from studentSpider.data_type import *
+from data_type import *
 
 # logging.basicConfig(level=logging.DEBUG,
 #                 format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -56,11 +57,12 @@ def log(msg, level=LOG_INFO, err_code=None):
         logging.log(logging.DEBUG, msg)
 
 
-def download(url, get_cookies=False, is_img=False, data=None, headers=None, cookies=None, timeout=10):
+def download(url, get_cookies=False, referer=None, is_img=False, data=None, headers=None, cookies=None, timeout=10):
     """
     下载网页
     :param url:
     :param get_cookies:
+    :param referer:
     :param is_img:
     :param data:
     :param headers:
@@ -74,14 +76,16 @@ def download(url, get_cookies=False, is_img=False, data=None, headers=None, cook
                 "User-Agent": "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/7.0)",
                 "Connection": "Keep-Alive",
                 "Accept": "text/html, application/xhtml+xml, */*",
-                "Accept-Encoding": "gzip, deflate"
+                "Accept-Encoding": "gzip, deflate",
+                "Referer": referer if referer is not None else url
             }
-
+        s = session()
         if data is not None:
             # POST
-            response = http_post(url, data=data, headers=headers, cookies=cookies, timeout=timeout)
+            response = s.post(url, data=data, headers=headers, cookies=cookies, timeout=timeout)
         else:
-            response = http_get(url, headers=headers, cookies=cookies, timeout=timeout)
+            # GET
+            response = s.get(url, headers=headers, cookies=cookies, timeout=timeout)
         if response.status_code == 200:
             if is_img:
                 content = response.content
@@ -130,7 +134,10 @@ def xpath_match(html, xpath, get_one=True ,default=None):
     :param default:
     :return:
     """
-    dom = etree.HTML(html)
+    if isinstance(html, str):
+        dom = etree.HTML(html)
+    else:
+        dom = html
     res = dom.xpath(xpath)
     if res and len(res) > 0:
         if get_one:
@@ -176,4 +183,47 @@ def is_match(page, pattern):
     :return:
     """
     return re.search(pattern, page) is not None
+
+
+@handle_exception()
+def url_encode(url):
+    """
+    url编码
+    :param url:
+    :return:
+    """
+    return quote(url)
+
+
+@handle_exception()
+def url_decode(url):
+    """
+    url解码
+    :param url:
+    :return:
+    """
+    return unquote(url)
+
+
+def trim_all(text, opt_list=None):
+    """
+    去除空格换行等字符
+    :param text:
+    :param opt_list:
+    :return:
+    """
+    try:
+        res = ""
+        default_list = ["\n", "\r\n", "\t", "&nbsp;", "\xa0"]
+        if opt_list is not None and isinstance(opt_list, list):
+            default_list += opt_list
+        for i in default_list:
+            res = text.replace(i, "")
+        res = re.sub("\s+", " ", res)
+        res = res.strip()
+        return res
+    except Exception as e:
+        log("转换字符串失败：%s" % str(e))
+        return text
+
 
