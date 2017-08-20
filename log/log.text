@@ -1,7 +1,18 @@
-2017-08-19 22:16:18,280 - utils.py[line:54] - INFO: å¼€å§‹ç™»å½•ä¸­...
-2017-08-19 22:16:18,289 - connectionpool.py[line:207] - INFO: Starting new HTTP connection (1): 210.41.224.117
-2017-08-19 22:16:18,471 - connectionpool.py[line:387] - DEBUG: "GET /Login/xLogin/Login.asp HTTP/1.1" 200 6024
-2017-08-19 22:16:18,648 - utils.py[line:54] - INFO: ä¸‹è½½ç½‘é¡µæˆåŠŸ: http://210.41.224.117/Login/xLogin/Login.asp
-2017-08-19 22:16:18,653 - connectionpool.py[line:207] - INFO: Starting new HTTP connection (1): 210.41.224.117
-2017-08-19 22:16:18,869 - connectionpool.py[line:387] - DEBUG: "GET /Login/xLogin/yzmDvCode.asp?k=802196&t=1503152178650 HTTP/1.1" 200 5814
-2017-08-19 22:16:19,020 - utils.py[line:54] - INFO: ä¸‹è½½ç½‘é¡µæˆåŠŸ: http://210.41.224.117/Login/xLogin/yzmDvCode.asp?k=802196&t=1503152178650
+2017-08-20 23:11:29,671 - utils.py[line:55] - INFO: ¿ªÊ¼µÇÂ¼ÖÐ...
+2017-08-20 23:11:29,684 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-20 23:11:29,905 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3207
+2017-08-20 23:11:29,985 - utils.py[line:55] - INFO: ÏÂÔØÍøÒ³³É¹¦: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-20 23:11:29,996 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-20 23:11:30,168 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2239
+2017-08-20 23:11:30,241 - utils.py[line:55] - INFO: ÏÂÔØÍøÒ³³É¹¦: http://xsc.cuit.edu.cn/default3.html
+2017-08-20 23:11:36,085 - utils.py[line:55] - INFO: ÑéÖ¤Âë:49690
+2017-08-20 23:11:37,272 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-20 23:11:37,443 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3266
+2017-08-20 23:11:37,518 - utils.py[line:55] - INFO: ÏÂÔØÍøÒ³³É¹¦: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-20 23:11:37,520 - utils.py[line:55] - INFO: µÇÂ¼³É¹¦ -->[ERROR_CODE:10]
+2017-08-20 23:11:38,204 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-20 23:11:38,407 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /SystemForm/Class/MyStudent.aspx HTTP/1.1" 200 17811
+2017-08-20 23:11:38,642 - utils.py[line:55] - INFO: ÏÂÔØÍøÒ³³É¹¦: http://xsc.cuit.edu.cn/SystemForm/Class/MyStudent.aspx
+2017-08-20 23:11:38,761 - utils.py[line:55] - INFO: ×ª»»×Ö·û´®Ê§°Ü£º'NoneType' object has no attribute 'replace'
+2017-08-20 23:11:38,786 - utils.py[line:55] - INFO: ×ª»»×Ö·û´®Ê§°Ü£º'NoneType' object has no attribute 'replace'
+2017-08-20 23:11:38,787 - utils.py[line:55] - INFO: ×ª»»×Ö·û´®Ê§°Ü£º'NoneType' object has no attribute 'replace'

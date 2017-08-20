@@ -1,4 +1,5 @@
 # coding:utf-8
+import redis
 import pymongo
 from pymongo.errors import ConnectionFailure
 
@@ -32,13 +33,14 @@ class MongoDB(object):
         option = "DB_MONGODB"
         self.__host = cf.get_value(option, "HOST")
         self.__port = cf.get_value(option, "PORT")
+        self.__username = cf.get_value(option, "USERNAME")
+        self.__password = cf.get_value(option, "PASSWORD")
 
-        db_setting = MONGO_SETTINGS[db_name]
         self.mongo_client = pymongo.MongoClient(self.__host, self.__port, connect=False)
         self.db = self.mongo_client[db_name]
 
-        username = db_setting["username"]
-        password = db_setting["password"]
+        username = self.__username
+        password = self.__password
         if username and password:
             self.db.authenticate(username, password)
 
@@ -107,3 +109,20 @@ class MongoDB(object):
     @catch_mongo_except
     def close(self):
         self.mongo_client.close()
+
+
+class RedisManage(object):
+    """
+    redis管理
+    """
+    def __init__(self):
+        option = "DB_REDIS"
+        self.__host = cf.get_value(option, "HOST")
+        self.__port = cf.get_value(option, "PORT")
+        self.__db = cf.get_value(option, "DB_NAME")
+        self.conn = None
+
+    def get_conn(self):
+        if not self.conn:
+            self.conn = redis.Redis(host=self.__host, port=self.__port, db=self.__db)
+        return self.conn

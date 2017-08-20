@@ -18,9 +18,10 @@ class JWCSpider(BaseSpider):
         super(JWCSpider, self).__init__()
         self._index_url = "http://xsc.cuit.edu.cn/SystemForm/main.htm"
         self._login_url = "http://210.41.224.117/Login/xLogin/Login.asp"
-        self._query_url = "http://jxgl.cuit.edu.cn/JXGL/Pub/ShowXsXx.asp?Lm=%sBmDm=%s&Xq=s&Sw=%s&Dr=%s&Pg=%d"
+        self._query_url = "http://jxgl.cuit.edu.cn/JXGL/Pub/ShowXsXx.asp?Lm=%CF%DE%D1%A7%BA%C5" \
+                          "&Xq=%D0%A3%C7%F8&Sw=%CF%B5%BF%C6&Dr=%C9%FD"
         self.code_file = 'jwc_code.png'
-        self.__query_txt = url_encode(cf.get_value("JWC_SPIDER", "QUERY_TXT"))
+        self.__query_txt = cf.get_value("JWC_SPIDER", "QUERY_TXT") + '%25'
         self.total_page = int(cf.get_value("JWC_SPIDER", "QUERY_PAGE"))
 
     @handle_exception()
@@ -32,13 +33,28 @@ class JWCSpider(BaseSpider):
         log("开始登录中...")
         self.__username = username
         self.__password = password
-        page = download(self._login_url)
-        if not page:
+        headers = {
+            "Host": "210.41.224.117",
+            "Connection": "keep-alive",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Origin": "http://210.41.224.117",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.130 Safari/537.36",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "http://210.41.224.117/Login/xLogin/Login.asp",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "zh-CN,zh;q=0.8",
+            "Cache-Control": "max-age=0"
+        }
+        page_info = download(self._login_url, get_cookies=True, headers=headers)
+        if not page_info:
             log("打开登录页面失败:%s" % self.__username, err_code=LOGIN_PAGE_ERROR)
             return False
+        page, cookies = page_info
+        s_cookies = self.handle_cookies(cookies)
         # 获取验证码
         code_key = xpath_match(page, '//input[@name="codeKey"]/@value')
-        check_code = self.__get_check_code(code_key)
+        check_code = self.__get_check_code(code_key, s_cookies)
         if not check_code:
             log("验证码输入错误", err_code=LOGIN_CODE_INPUT_ERROR)
             return False
@@ -52,10 +68,11 @@ class JWCSpider(BaseSpider):
             "verifycode": check_code,
             "codeKey": code_key,
             "Login": "Check",
-            "IbtnEnter.x": random.randint(20, 40),
-            "IbtnEnter.y": random.randint(20, 40)
+            "IbtnEnter.x": random.randint(20, 50),
+            "IbtnEnter.y": random.randint(20, 50)
         }
-        page_info = download(self._login_url, data=post_data, get_cookies=True)
+
+        page_info = download(self._login_url, data=post_data, headers=headers, get_cookies=True, cookies=s_cookies)
         if not page_info:
             log("登录失败,返回信息失败", err_code=LOGIN_PAGE_ERROR)
             return False
@@ -68,14 +85,19 @@ class JWCSpider(BaseSpider):
             return False
         elif is_match(login_page, "LoginOK"):
             log("登录成功", err_code=LOGIN_SUCC)
-            self.__cookies = cookies
+            main_url = "http://jxgl.cuit.edu.cn/JXGL/Xs/MainMenu.asp"
+            cookies = self.handle_cookies(cookies)
+            self._cookies = cookies if cookies else s_cookies
+            main_page = download(main_url, headers=headers, cookies=self._cookies, get_cookies=True)
+            cookies = self.handle_cookies(self._cookies)
+            self._cookies = cookies if cookies else self._cookies
             return True
         else:
             log("登录失败，未知错误", err_code=LOGIN_UNKNOWN_ERROR)
             return False
 
     @handle_exception()
-    def __get_check_code(self, key):
+    def __get_check_code(self, key, cookies):
         """
         获取验证码
         :param key:
@@ -83,7 +105,7 @@ class JWCSpider(BaseSpider):
         """
         code_url = "http://210.41.224.117/Login/xLogin/yzmDvCode.asp?k=%s&t=%s" % (key, int((time.time()*1000)))
         referer = self._login_url
-        code_body = download(code_url, is_img=True, referer=referer)
+        code_body = download(code_url, is_img=True, referer=referer, cookies=cookies)
         if not code_body:
             return
         with open(self.code_file, 'wb') as f:
@@ -99,11 +121,12 @@ class JWCSpider(BaseSpider):
         :return:
         """
         curr_page = 1
-        base_url = self._query_url % (quote("限学号"), self.__query_txt, quote("校区"), quote("系科"), quote("升"))
+        base_url = self._query_url + "&BmDm=%s" % self.__query_txt
+        page_str = "&Pg=%d"
         re_data = []
         while curr_page <= self.total_page:
-            query_url = base_url % curr_page
-            res_page = download(query_url, cookies=self.__cookies)
+            query_url = base_url + page_str % curr_page
+            res_page = download(query_url, cookies=self._cookies, charset="gb2312")
             if not res_page:
                 log("查询学生学号信息失败-->page:%d" % curr_page, err_code=GET_JWC_PAGE_ERROR)
             student_num = reg_match(res_page, r">学号＝.+?</b>\]的学生一共有 <b>(\d+)<")

@@ -1,12 +1,14 @@
 # coding:utf-8
-
-import ConfigParser
+try:
+    import ConfigParser as cf
+except:
+    import configparser as cf
 import os
 
 
-class OverwriteConfig(ConfigParser.ConfigParser):
+class OverwriteConfig(cf.ConfigParser):
     def __init__(self, defaults=None):
-        ConfigParser.ConfigParser.__init__(self, defaults=defaults)
+        cf.ConfigParser.__init__(self, defaults=defaults)
 
     def optionxform(self, optionstr):
         return optionstr

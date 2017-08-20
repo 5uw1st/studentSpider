@@ -1,4 +1,5 @@
 # coding:utf-8
+from requests.utils import dict_from_cookiejar
 
 
 class BaseSpider(object):
@@ -8,7 +9,7 @@ class BaseSpider(object):
     def __init__(self):
         self.__username = None
         self.__password = None
-        self.__cookies = {}
+        self._cookies = {}
 
     def login(self, username, password):
         """
@@ -19,10 +20,11 @@ class BaseSpider(object):
         """
         pass
 
-    def __get_check_code(self, page):
+    def __get_check_code(self, *args, **kwargs):
         """
         获取验证码方法，可重写
-        :param page:
+        :param args:
+        :param kwargs:
         :return:
         """
         pass
@@ -33,4 +35,8 @@ class BaseSpider(object):
         :param cookies:
         :return:
         """
-        pass
+        try:
+            res = dict_from_cookiejar(cookies)
+        except Exception as e:
+            res = {}
+        return res

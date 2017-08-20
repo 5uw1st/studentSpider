@@ -57,7 +57,7 @@ def log(msg, level=LOG_INFO, err_code=None):
         logging.log(logging.DEBUG, msg)
 
 
-def download(url, get_cookies=False, referer=None, is_img=False, data=None, headers=None, cookies=None, timeout=10):
+def download(url, get_cookies=False, referer=None, is_img=False, data=None, headers=None, cookies=None, timeout=10, charset=None):
     """
     下载网页
     :param url:
@@ -68,6 +68,7 @@ def download(url, get_cookies=False, referer=None, is_img=False, data=None, head
     :param headers:
     :param cookies:
     :param timeout:
+    :param charset:
     :return:
     """
     try:
@@ -90,7 +91,16 @@ def download(url, get_cookies=False, referer=None, is_img=False, data=None, head
             if is_img:
                 content = response.content
             else:
-                content = response.text
+                content = response.content
+                if response.text.find("charset=gb2312") >= 0:
+                    content = content.decode("gb2312")
+                elif response.text.find("charset=utf-8") >= 0:
+                    content = content.decode("utf-8")
+                else:
+                    if charset is not None:
+                        content = content.decode(charset)
+                    else:
+                        content = response.text
             log("下载网页成功: %s" % url)
             if get_cookies:
                 cookies = response.cookies
