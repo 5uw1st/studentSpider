@@ -1,10 +1,14 @@
 # coding:utf-8
+import os
 import time
 import random
 
 from utils import *
 from data_type import *
 from spider.base_spider import BaseSpider
+from config import local_config
+
+PIC_DIR = local_config.get_value("CAPTCHA", "XGW_PATH")
 
 
 class XGSpider(BaseSpider):
@@ -15,7 +19,7 @@ class XGSpider(BaseSpider):
         super(XGSpider, self).__init__()
         self._index_url = "http://xsc.cuit.edu.cn/SystemForm/Class/MyStudent.aspx"
         self._login_url = "http://xsc.cuit.edu.cn/UserLogin.html"
-        self.code_file = 'xg_code.png'
+        self.code_file = ""
 
     @handle_exception()
     def login(self, username, password):
@@ -84,8 +88,18 @@ class XGSpider(BaseSpider):
         code_body = download(code_url, is_img=True, referer=referer, cookies=cookies)
         if not code_body:
             return
+        file_name = self._get_file_name(content=code_body)
+        self.code_file = os.path.join(PIC_DIR, file_name)
         with open(self.code_file, 'wb') as f:
             f.write(code_body)
+        code = self.identify_captcha(self.code_file)
+        if code:
+            log("验证码识别成功-->%s:%s" % (self.code_file, code))
+            return code
+        elif code is None:
+            log("验证码识别出错-->%s" % self.code_file)
+        else:
+            log("验证码识别失败-->%s" % self.code_file)
         code = input("-->请输入验证码:")
         log("验证码:%s" % code)
         return code

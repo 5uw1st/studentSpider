@@ -33,7 +33,6 @@ class MongoDB(object):
         option = "DB_MONGODB"
         self.__host = cf.get_value(option, "HOST")
         self.__port = int(cf.get_value(option, "PORT"))
-        self.__port = cf.get_value(option, "PORT")
         self.__username = cf.get_value(option, "USERNAME")
         self.__password = cf.get_value(option, "PASSWORD")
 
@@ -119,7 +118,7 @@ class RedisManage(object):
     def __init__(self):
         option = "DB_REDIS"
         self.__host = cf.get_value(option, "HOST")
-        self.__port = cf.get_value(option, "PORT")
+        self.__port = int(cf.get_value(option, "PORT"))
         self.__db = cf.get_value(option, "DB_NAME")
         self.conn = None
 

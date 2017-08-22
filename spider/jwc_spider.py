@@ -1,6 +1,7 @@
 # coding:utf-8
 import random
 import time
+import os
 
 from PIL import Image
 
@@ -10,6 +11,8 @@ from spider.base_spider import WebdirverSpider
 from config import LocalConfig
 
 cf = LocalConfig()
+
+PIC_DIR = cf.get_value("CAPTCHA", "JWC_PATH")
 
 
 class JWCSpider(WebdirverSpider):
@@ -21,7 +24,7 @@ class JWCSpider(WebdirverSpider):
         self._index_url = "http://jxgl.cuit.edu.cn/JXGL/xs/MainMenu.asp"
         self._login_url = "http://210.41.224.117/Login/xLogin/Login.asp"
         self._query_url = "http://jxgl.cuit.edu.cn/JXGL/Pub/InputXh.asp"
-        self.code_file = 'jwc_code.png'
+        self.code_file = ''
         self.__query_txt = cf.get_value("JWC_SPIDER", "QUERY_TXT") + '%'
         self.total_page = int(cf.get_value("JWC_SPIDER", "QUERY_PAGE"))
 
@@ -65,6 +68,7 @@ class JWCSpider(WebdirverSpider):
         获取验证码
         :return:
         """
+        self.code_file = os.path.join(PIC_DIR, self._get_file_name(time_flag=True))
         self.driver.get_screenshot_as_file(self.code_file)
         location = self.driver.find_element_by_id('verifypic').location
         size = self.driver.find_element_by_id('verifypic').size
@@ -126,4 +130,8 @@ class JWCSpider(WebdirverSpider):
             else:
                 log("无任何学号信息", err_code=GET_JWC_NO_INFO_ERROR)
                 return
+        try:
+            self.driver.quit()
+        except:
+            pass
         return re_data

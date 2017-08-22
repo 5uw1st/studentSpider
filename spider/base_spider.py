@@ -1,8 +1,13 @@
 # coding:utf-8
 import os
+import time
+import hashlib
 
 from requests.utils import dict_from_cookiejar
 from selenium import webdriver
+
+from captcha.jwc_captcha import JWCCaptcha
+from captcha.xgw_captcha import XGWCaptcha
 
 chromeDriver = "driver/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromeDriver
@@ -48,6 +53,42 @@ class BaseSpider(object):
         except Exception as e:
             res = {}
         return res
+
+    def identify_captcha(self, pic_name, site_type=2):
+        """
+        识别验证码
+        :param pic_name:
+        :param site_type:
+        :return:
+        """
+        try:
+            if site_type == 1:
+                cap = JWCCaptcha(pic_name)
+            else:
+                cap = XGWCaptcha(pic_name)
+            code = cap.get_verify()
+            if code.find("FAIL") >= 0:
+                return False
+            else:
+                return code
+        except Exception as e:
+            return None
+
+    def _get_file_name(self, content=None, time_flag=False):
+        """
+        通过MD5生成文件名
+        :param content:
+        :param time_flag:
+        :return:
+        """
+        m = hashlib.md5()
+        if time_flag:
+            time_str = str(time.time())
+            m.update(time_str)
+        else:
+            m.update(content)
+        file_name = "%s.jpg" % (str(m.hexdigest()))
+        return file_name
 
 
 class WebdirverSpider(BaseSpider):

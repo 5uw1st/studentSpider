@@ -57,10 +57,12 @@ def handle_id_info():
     if is_succ:
         id_list = jwc.get_student_info()
         for info in id_list:
-            info.update({"password": True, "_id": info["id"]})
-            info.pop("id")
-            log("ID:"+id_mongo.insertOne(info))
-            id_mongo.insertOne(info)
+            try:
+                info.update({"password": True, "_id": info["id"]})
+                info.pop("id")
+                id_mongo.insertOne(info)
+            except Exception as e:
+                continue
         log("所有信息获取并保存完成")
     else:
         log("登录失败，未获取到任何信息")
@@ -74,16 +76,23 @@ def get_user_info(username, password):
     :param password:
     :return:
     """
-    is_succ = xgw.login(username, password)
+    is_succ = False
+    pwd_list = [password, "12345678", "123456"]
+    for p in pwd_list:
+        is_succ = xgw.login(username, p)
+        if is_succ:
+            password = p
+            break
     if is_succ:
         user_info = xgw.get_user_info()
-        user_info.update({"img_url": "", "id": user_info["student_id"]})
+        user_info.update({"img_url": "", "_id": user_info["student_id"]})
         user_info.pop("student_id")
         info_mongo.insertOne(user_info)
         log("用户[%s]的信息获取完成" % username)
         log("INFO:%s" % str(user_info))
+        id_mongo.updateOne({"_id": str(username)}, {"$set": {"password": str(password)}})
     else:
-        id_mongo.updateOne({"_id": username}, {"$set": {"password": False}})
+        id_mongo.updateOne({"_id": str(username)}, {"$set": {"password": False}})
         log("登录失败，未获取到任何信息 -->%s" % username)
 
 
@@ -94,6 +103,7 @@ def run():
     """
     # 获取学号信息并保存
     # handle_id_info()
+
     # 从mongodb数据库初始化数据到redis
     if init_redis():
         # 取出一条记录
@@ -106,5 +116,20 @@ def run():
                 break
 
 
+class SingleInstance(object):
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(SingleInstance, cls).__new__(cls, *args, **kwargs)
+        return cls._instance
+
+
+class Test(SingleInstance):
+    pass
+
 if __name__ == '__main__':
     run()
+    # t1 = Test()
+    # t2 = Test()
+    # print(t1 == t2)

@@ -1,39 +1,18 @@
-<<<<<<< HEAD
-2017-08-22 00:07:21,396 - utils.py[line:55] - INFO: 初始化redis数据完成
-2017-08-22 00:07:39,597 - utils.py[line:55] - INFO: 开始登录中...
-2017-08-22 00:07:47,520 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-22 00:07:47,712 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3213
-2017-08-22 00:07:47,826 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-22 00:07:53,624 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-22 00:07:53,791 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2270
-2017-08-22 00:07:53,864 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/default3.html
-2017-08-22 00:08:04,053 - utils.py[line:55] - INFO: 验证码:07450
-2017-08-22 00:08:17,957 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-22 00:08:18,160 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3258
-2017-08-22 00:08:18,239 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-22 00:08:23,475 - utils.py[line:55] - INFO: 登录成功 -->[ERROR_CODE:10]
-2017-08-22 00:08:39,906 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-22 00:08:40,123 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /SystemForm/Class/MyStudent.aspx HTTP/1.1" 200 17696
-2017-08-22 00:08:40,353 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/SystemForm/Class/MyStudent.aspx
-2017-08-22 00:09:33,262 - utils.py[line:55] - INFO: 用户[b'2013043048']的信息获取完成
-2017-08-22 00:09:36,405 - utils.py[line:55] - INFO: INFO:{'family_address': '四川省射洪中学校', 'father_unit': None, 'national': '汉', 'student_sex': '1', 'class_no': '2013级遥感科学与技术1班', 'bank_no': None, 'native_place': '四川遂宁市射洪县', 'city': None, 'examinee_type': '应届', 'family_tel': None, 'grade': '2013级', '_id': ObjectId('599b05bc5fd46614682997a1'), 'student_name': '文兵', 'exam_no': '13510803160883', 'spe_type': '本科', 'polity': '共青团员', 'province': None, 'img_url': '', 'id_card': '51092219940527193', 'family_post': '629200', 'in_status': '在校', 'dorm_address': None, 'father_tel': None, 'family_reg': '1', 'get_type': '统招', 'county': None, 'id': '2013043048', 'birthday': '1994-05-27', 'specialty_no': '遥感科学与技术', 'father_name': None, 'mather_unit': None, 'bank_name': None, 'mather_tel': None, 'college_no': '资源环境学院', 'mather_name': None, 'in_time': '2013-09-04'}
-=======
-2017-08-20 23:11:29,671 - utils.py[line:55] - INFO: 开始登录中...
-2017-08-20 23:11:29,684 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-20 23:11:29,905 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3207
-2017-08-20 23:11:29,985 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-20 23:11:29,996 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-20 23:11:30,168 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2239
-2017-08-20 23:11:30,241 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/default3.html
-2017-08-20 23:11:36,085 - utils.py[line:55] - INFO: 验证码:49690
-2017-08-20 23:11:37,272 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-20 23:11:37,443 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3266
-2017-08-20 23:11:37,518 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-20 23:11:37,520 - utils.py[line:55] - INFO: 登录成功 -->[ERROR_CODE:10]
-2017-08-20 23:11:38,204 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-20 23:11:38,407 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /SystemForm/Class/MyStudent.aspx HTTP/1.1" 200 17811
-2017-08-20 23:11:38,642 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/SystemForm/Class/MyStudent.aspx
-2017-08-20 23:11:38,761 - utils.py[line:55] - INFO: 转换字符串失败：'NoneType' object has no attribute 'replace'
-2017-08-20 23:11:38,786 - utils.py[line:55] - INFO: 转换字符串失败：'NoneType' object has no attribute 'replace'
-2017-08-20 23:11:38,787 - utils.py[line:55] - INFO: 转换字符串失败：'NoneType' object has no attribute 'replace'
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900
+2017-08-23 00:28:25,552 - utils.py[line:55] - INFO: 初始化redis数据完成
+2017-08-23 00:28:26,094 - utils.py[line:55] - INFO: 开始登录中...
+2017-08-23 00:28:26,108 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 00:28:26,273 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3210
+2017-08-23 00:28:26,349 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-23 00:28:26,360 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 00:28:26,539 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2244
+2017-08-23 00:28:26,618 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/default3.html
+2017-08-23 00:29:11,371 - utils.py[line:55] - INFO: 验证码识别成功-->captcha\img\xgw\a4cd6952edac4fa82776defeb8663d0a.jpg:87844
+2017-08-23 00:29:45,896 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 00:29:46,081 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3267
+2017-08-23 00:29:46,160 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-23 00:29:50,944 - utils.py[line:55] - INFO: 登录成功 -->[ERROR_CODE:10]
+2017-08-23 00:29:54,528 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 00:29:54,949 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /SystemForm/Class/MyStudent.aspx HTTP/1.1" 200 18201
+2017-08-23 00:29:55,190 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/SystemForm/Class/MyStudent.aspx
+2017-08-23 00:30:08,756 - utils.py[line:55] - INFO: 用户[b'2016043042']的信息获取完成
+2017-08-23 00:30:09,836 - utils.py[line:55] - INFO: INFO:{'national': '汉', 'exam_no': '16652901151832', 'dorm_address': None, 'examinee_type': '应届', 'bank_no': '6217903100025123787', 'father_tel': '18999663090', 'father_name': '王琳', 'province': None, 'mather_unit': '十五团红桥中学', 'grade': '2016级', 'family_post': '843300', 'polity': '共青团员', 'city': None, 'student_name': '王宗冶', 'in_status': '在校', 'birthday': '1998-04-17', 'family_tel': None, 'mather_name': '湛美英', 'get_type': '南疆援疆', 'mather_tel': '18196389876', 'in_time': None, 'county': None, 'native_place': '四川大竹', 'student_sex': '1', 'id_card': '652901199804176714', 'img_url': '', 'specialty_no': '遥感科学与技术', 'family_reg': '2', 'college_no': '资源环境学院', 'class_no': '2016级遥感科学与技术1班', 'family_address': '新疆一师阿拉尔市新苑小区5号楼1单元502', 'spe_type': '本科', 'bank_name': '中国银行', 'father_unit': '十三团水管所', '_id': '2016043042'}

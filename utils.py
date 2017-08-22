@@ -135,11 +135,7 @@ def handle_exception(show_error=True):
 
 
 @handle_exception()
-<<<<<<< HEAD
 def xpath_match(html, xpath, get_one=True, default=None):
-=======
-def xpath_match(html, xpath, get_one=True ,default=None):
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900
     """
     XPATH匹配
     :param html:
@@ -174,11 +170,7 @@ def reg_match(page, pattern, get_one=True, default=None):
     :param default:
     :return:
     """
-<<<<<<< HEAD
     if not get_one:
-=======
-    if get_one:
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900
         res = re.findall(pattern, page)
     else:
         res = re.search(pattern, page)
@@ -231,11 +223,8 @@ def trim_all(text, opt_list=None):
     :return:
     """
     try:
-<<<<<<< HEAD
         if not isinstance(text, str):
             return None
-=======
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900
         res = ""
         default_list = ["\n", "\r\n", "\t", "&nbsp;", "\xa0"]
         if opt_list is not None and isinstance(opt_list, list):
