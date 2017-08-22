@@ -41,3 +41,5 @@ class LocalConfig(object):
             return True
         finally:
             f.close()
+
+local_config = LocalConfig()

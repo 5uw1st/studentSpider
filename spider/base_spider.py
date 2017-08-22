@@ -1,5 +1,4 @@
 # coding:utf-8
-<<<<<<< HEAD
 import os
 
 from requests.utils import dict_from_cookiejar
@@ -9,9 +8,6 @@ chromeDriver = "driver/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromeDriver
 phantomjsDriver = "driver/phantomjs"
 os.environ["webdriver.phantomjs.driver"] = phantomjsDriver
-=======
-from requests.utils import dict_from_cookiejar
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900
 
 
 class BaseSpider(object):
@@ -52,7 +48,6 @@ class BaseSpider(object):
         except Exception as e:
             res = {}
         return res
-<<<<<<< HEAD
 
 
 class WebdirverSpider(BaseSpider):
@@ -73,5 +68,3 @@ class WebdirverSpider(BaseSpider):
             return webdriver.Chrome(chromeDriver)
         else:
             return webdriver.PhantomJS(phantomjsDriver)
-=======
->>>>>>> 0c6cb4ed541727b7997974a3e5a88a4b11444900

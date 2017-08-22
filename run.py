@@ -6,9 +6,9 @@ from spider.xg_spider import XGSpider
 from spider.jwc_spider import JWCSpider
 from db_manager import MongoDB, RedisManage
 from utils import log, handle_exception
-from config import LocalConfig
+from config import local_config
 
-cf = LocalConfig()
+cf = local_config
 jwc = JWCSpider()
 xgw = XGSpider()
 db_name = cf.get_value("DB_MONGODB", "DB_NAME")
