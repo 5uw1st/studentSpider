@@ -18,6 +18,7 @@ id_mongo = MongoDB(db_name, id_table)
 info_mongo = MongoDB(db_name, info_table)
 redis = RedisManage().get_conn()
 id_key = cf.get_value("DB_REDIS", "ID_KEY")
+init_redis_flag = cf.get_value("USER", "INIT_REDIS")
 user = cf.get_value("USER", "USERNAME")
 pwd = cf.get_value("USER", "PASSWORD")
 
@@ -90,9 +91,9 @@ def get_user_info(username, password):
         info_mongo.insertOne(user_info)
         log("用户[%s]的信息获取完成" % username)
         log("INFO:%s" % str(user_info))
-        id_mongo.updateOne({"_id": str(username)}, {"$set": {"password": str(password)}})
+        id_mongo.updateOne({"_id": username.decode()}, {"$set": {"password": password.decode()}})
     else:
-        id_mongo.updateOne({"_id": str(username)}, {"$set": {"password": False}})
+        id_mongo.updateOne({"_id": username.decode()}, {"$set": {"password": False}})
         log("登录失败，未获取到任何信息 -->%s" % username)
 
 
@@ -103,33 +104,21 @@ def run():
     """
     # 获取学号信息并保存
     # handle_id_info()
+    if init_redis_flag == "1":
+        # 从mongodb数据库初始化数据到redis
+        if not init_redis():
+            return
 
-    # 从mongodb数据库初始化数据到redis
-    if init_redis():
+    while True:
         # 取出一条记录
-        while True:
-            user_id = redis.lpop(id_key)
-            if user_id:
-                # 获取学生信息并保存
-                get_user_info(user_id, user_id)
-            else:
-                break
+        user_id = redis.lpop(id_key)
+        if user_id:
+            # 获取学生信息并保存
+            get_user_info(user_id, user_id)
+        else:
+            break
 
-
-class SingleInstance(object):
-    _instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super(SingleInstance, cls).__new__(cls, *args, **kwargs)
-        return cls._instance
-
-
-class Test(SingleInstance):
-    pass
 
 if __name__ == '__main__':
     run()
-    # t1 = Test()
-    # t2 = Test()
-    # print(t1 == t2)
+

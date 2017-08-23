@@ -1,0 +1,13 @@
+2017-08-23 22:44:55,566 - utils.py[line:55] - INFO: 初始化redis数据完成
+2017-08-23 22:44:55,568 - utils.py[line:55] - INFO: 开始登录中...
+2017-08-23 22:44:55,582 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 22:44:55,768 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3219
+2017-08-23 22:44:55,844 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-23 22:44:55,855 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 22:44:56,057 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2223
+2017-08-23 22:44:56,142 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/default3.html
+2017-08-23 22:44:56,466 - utils.py[line:55] - INFO: 验证码识别成功-->captcha\img\xgw\49acc0938c528b0b0aa6ba23d99e7c49.jpg:67524
+2017-08-23 22:44:56,484 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
+2017-08-23 22:44:56,682 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3259
+2017-08-23 22:44:56,770 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
+2017-08-23 22:44:56,773 - utils.py[line:55] - INFO: 登录成功 -->[ERROR_CODE:10]

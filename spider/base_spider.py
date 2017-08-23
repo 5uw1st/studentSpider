@@ -6,13 +6,20 @@ import hashlib
 from requests.utils import dict_from_cookiejar
 from selenium import webdriver
 
+from db_manager import MongoDB
 from captcha.jwc_captcha import JWCCaptcha
 from captcha.xgw_captcha import XGWCaptcha
+from data_type import SITE_TYPE_JWC, SITE_TYPE_XGW, CAPTCHA_NUMBER, \
+    DRIVER_TYPE_CHROME, DRIVER_TYPE_FIREFOX, DRIVER_TYPE_PHANTOMJS
+from config import local_config
 
 chromeDriver = "driver/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromeDriver
 phantomjsDriver = "driver/phantomjs"
 os.environ["webdriver.phantomjs.driver"] = phantomjsDriver
+
+db_name = local_config.get_value("DB_MONGODB", "DB_NAME")
+table_name = local_config.get_value("DB_MONGODB", "CAPTCHA_TABLE")
 
 
 class BaseSpider(object):
@@ -23,6 +30,8 @@ class BaseSpider(object):
         self.__username = None
         self.__password = None
         self._cookies = {}
+        self.mongodb = MongoDB(db_name, table_name)
+        self._input_flag = False
 
     def login(self, username, password):
         """
@@ -54,7 +63,7 @@ class BaseSpider(object):
             res = {}
         return res
 
-    def identify_captcha(self, pic_name, site_type=2):
+    def identify_captcha(self, pic_name, site_type=SITE_TYPE_XGW):
         """
         识别验证码
         :param pic_name:
@@ -62,10 +71,12 @@ class BaseSpider(object):
         :return:
         """
         try:
-            if site_type == 1:
+            if site_type == SITE_TYPE_JWC:
                 cap = JWCCaptcha(pic_name)
-            else:
+            elif site_type == SITE_TYPE_XGW:
                 cap = XGWCaptcha(pic_name)
+            else:
+                cap = JWCCaptcha(pic_name)
             code = cap.get_verify()
             if code.find("FAIL") >= 0:
                 return False
@@ -90,6 +101,50 @@ class BaseSpider(object):
         file_name = "%s.jpg" % (str(m.hexdigest()))
         return file_name
 
+    def _save_captcha_identify_log(self, file_name, code, status_code, site_type=SITE_TYPE_XGW, code_type=CAPTCHA_NUMBER):
+        """
+        保存验证码识别记录
+        :param file_name:
+        :param code:
+        :param status_code:
+        :param site_type:
+        :param code_type:
+        :return:
+        """
+        try:
+            info = {
+                "pic_name": file_name,
+                "code": code,
+                "status_code": status_code,
+                "site_type": site_type,
+                "code_type": code_type
+            }
+            if self.mongodb.insertOne(info):
+                return True
+            return False
+        except Exception as e:
+            return False
+
+    def _save_file(self, file_name, content, is_pic=False):
+        """
+        保存文件内容(HTML)
+        :param file_name:
+        :param content:
+        :param is_pic:
+        :return:
+        """
+        try:
+            if os.path.exists(file_name):
+                return True
+            mode = "w"
+            if is_pic:
+                mode = "wb"
+            with open(file_name, mode) as f:
+                f.write(content)
+            return True
+        except Exception as e:
+            return False
+
 
 class WebdirverSpider(BaseSpider):
     """
@@ -99,13 +154,17 @@ class WebdirverSpider(BaseSpider):
         super(WebdirverSpider, self).__init__()
         self.driver = None
 
-    def get_driver(self, browser_type="Chrome"):
+    def get_driver(self, browser_type=DRIVER_TYPE_CHROME):
         """
         获取浏览器对象
         :param browser_type:
         :return:
         """
-        if browser_type == "Chrome":
+        if browser_type == DRIVER_TYPE_CHROME:
             return webdriver.Chrome(chromeDriver)
-        else:
+        elif browser_type == DRIVER_TYPE_FIREFOX:
+            pass
+        elif browser_type == DRIVER_TYPE_PHANTOMJS:
             return webdriver.PhantomJS(phantomjsDriver)
+        else:
+            pass

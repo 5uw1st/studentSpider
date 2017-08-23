@@ -17,7 +17,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)  # Log等级总开关
 
 # 第二步，创建一个handler，用于写入日志文件
-logfile = './log/log.text'
+logfile = './log/log.log'
 fh = logging.FileHandler(logfile, mode='w')
 fh.setLevel(logging.DEBUG)  # 输出到file的log等级的开关
 

@@ -40,7 +40,6 @@ class JWCSpider(WebdirverSpider):
         self.driver.delete_all_cookies()
         self.driver.get(self._index_url)
         self.driver.implicitly_wait(2)
-        # self.driver.get(self._login_url)
         self.driver.execute_script('''document.getElementById("txtId").value = "%s";''' % username)
         self.driver.execute_script('''document.getElementById("txtMM").value = "%s";''' % password)
         check_code = self.__get_check_code()
@@ -53,7 +52,6 @@ class JWCSpider(WebdirverSpider):
                 log(alert.text)
                 return False
         except:
-            self.driver.get_screenshot_as_file("login.png")
             if is_match(self.driver.page_source, "验证码不匹配"):
                 log("验证码不匹配", err_code=LOGIN_CODE_ERROR)
                 return False

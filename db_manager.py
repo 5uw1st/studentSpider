@@ -2,6 +2,7 @@
 import redis
 import pymongo
 from pymongo.errors import ConnectionFailure
+from utils import log
 
 from config import LocalConfig
 
@@ -82,9 +83,11 @@ class MongoDB(object):
     def count(self, **kwargs):
         return self.table.count(kwargs.get("filter"))
 
-    @catch_mongo_except
     def insertOne(self, value):
-        return self.table.insert_one(value)
+        try:
+            return self.table.insert_one(value)
+        except Exception as e:
+            log("该条记录已经存在：%s" % value.get("_id", "nothing"))
 
     @catch_mongo_except
     def updateOne(self, filter, update, upsert=False):
@@ -115,6 +118,13 @@ class RedisManage(object):
     """
     redis管理
     """
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super(RedisManage, cls).__new__(cls, *args, **kwargs)
+        return cls._instance
+
     def __init__(self):
         option = "DB_REDIS"
         self.__host = cf.get_value(option, "HOST")

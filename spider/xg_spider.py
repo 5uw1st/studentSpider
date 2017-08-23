@@ -66,8 +66,14 @@ class XGSpider(BaseSpider):
         elif is_match(login_page, "验证码已经过期"):
             log("验证码已经过期", err_code=LOGIN_CODE_ERROR)
             return False
+        elif is_match(login_page, "验证码输入错误"):
+            log("验证码输入错误", err_code=LOGIN_CODE_ERROR)
+            if not self._input_flag:
+                self._save_captcha_identify_log(self.code_file, check_code, IDENTIFY_WRONG)
         elif is_match(login_page, r"location\.href='SystemForm/main\.htm'"):
             log("登录成功", err_code=LOGIN_SUCC)
+            if not self._input_flag:
+                self._save_captcha_identify_log(self.code_file, check_code, IDENTIFY_RIGHT)
             self._cookies = self.handle_cookies(cookies)
             return True
         else:
@@ -90,17 +96,23 @@ class XGSpider(BaseSpider):
             return
         file_name = self._get_file_name(content=code_body)
         self.code_file = os.path.join(PIC_DIR, file_name)
-        with open(self.code_file, 'wb') as f:
-            f.write(code_body)
+        if not self._save_file(self.code_file, code_body, is_pic=True):
+            log("保存验证码图片文件失败", err_code=LOGIN_CODE_SAVE_ERROR)
+            return
+        self._input_flag = False
         code = self.identify_captcha(self.code_file)
         if code:
             log("验证码识别成功-->%s:%s" % (self.code_file, code))
+            self._save_captcha_identify_log(self.code_file, code, IDENTIFY_SUCC)
             return code
         elif code is None:
+            self._save_captcha_identify_log(self.code_file, code, IDENTIFY_EXCEPTION)
             log("验证码识别出错-->%s" % self.code_file)
         else:
+            self._save_captcha_identify_log(self.code_file, code, IDENTIFY_FAIL)
             log("验证码识别失败-->%s" % self.code_file)
         code = input("-->请输入验证码:")
+        self._input_flag = True
         log("验证码:%s" % code)
         return code
 
@@ -193,6 +205,5 @@ class XGSpider(BaseSpider):
             else:
                 val = None
             re_data[key] = val
-        with open("html/%s.html" % student_id, 'w') as f:
-            f.write(info_page)
+        self._save_file("html/%s.html" % student_id, info_page)
         return re_data
