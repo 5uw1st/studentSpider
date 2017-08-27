@@ -1,0 +1,941 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	无标题页
+</title>
+    <script language="javascript" src="../../Jscript/area1.js"></script>
+    <script type="text/javascript" src="../js/Public.js"></script>
+    <link href="../js/Public.css" rel="stylesheet" type="text/css" /><link href="../../App_Themes/GridPager/GridPager.css" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form name="Student" method="post" action="./MyStudent.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="Student" enctype="multipart/form-data">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Student'];
+if (!theForm) {
+    theForm = document.Student;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=S8JCuF17GL8Co4Q1PcRpUhjPtu7GuFZPa2HvxUJ1n-PaDOPrKRpQyub4y_NSxomVWKbZ3Amf7JdiAUfX0&amp;t=635802961220000000" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=epWIFealG84PYAxi5eHQjIxbTmokGicl3oKhoDqZpAaO6IRhqV2jsIt-yuyS_Y_Z4Bs-Sp93zsLYiI-OSXaMD-VbAaI1&amp;t=635802961220000000" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5CBCA477" />
+</div>
+    <div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="10">
+                    &nbsp;
+                </td>
+                <td>
+                    <table width="100%" border="0" cellspacing="1" cellpadding="0" class="TableBlack">
+                        <tr>
+                            <td class="TdBlack">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td width="10">
+                                        </td>
+                                        <td>
+                                            <table border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="60" align="center">
+                                                        <input type="image" name="Save" id="Save" src="../images/baocun.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Save&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="border-width:0px;" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="10">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <script>             document.write('<style> div.documentBody{height:' + (document.documentElement.clientHeight - 32) + 'px;width:100%;overflow:auto;} </style> ');</script>
+        <div class="documentBody" id="Body" style="position: absolute; top: 32">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="10" height="28">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td valign="bottom" class="TitleText">
+                                    &nbsp;<img src="../images/arrow.gif">&nbsp;学生信息&nbsp;(<span style="color: #ff0000">红色标题可修改。请确保信息真实完整，奖优助补等均会直接利用本信息。如发现错误且本人不能修改，请求助辅导员或班主任。</span>)
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="10">
+                        &nbsp;
+                    </td>
+                    <td>
+                        
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="TableBlack">
+    <tr>
+        <td colspan="5" class="EdtTitleTbBack">
+            &nbsp;学生基本信息
+        </td>
+    </tr>
+    <tr>
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            学号：
+        </td>
+        <td width="33%" bgcolor="#FFFFFF">
+            <input name="Student11$StudentNo" type="text" id="Student11_StudentNo" maxlength="25" style="width: 145px" disabled="disabled" value="2016043038" />
+            <span style="color: red">**
+                <span id="Student11_RequiredFieldValidator1" style="color:Red;visibility:hidden;">必填项</span>
+            </span>
+        </td>
+        <td width="14%" align="right" class="EdtTbBack">
+            姓名：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student11$StudentName" type="text" id="Student11_StudentName" maxlength="25" style="width: 139px" disabled="disabled" value="刘攀" />
+            <span style="color: red">**</span>
+            <span id="Student11_RequiredFieldValidator2" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+        <td width="10%" rowspan="4" align="center" valign="middle" bgcolor="#FFFFFF">
+            <img id="Student11_Image1" disabled="disabled" src="../images/nophoto.gif" style="height:100px;width:80px;border-width:0px;" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            性别：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <span id="Student11_Sex" disabled="disabled"><span disabled="disabled"><input id="Student11_Sex_0" type="radio" name="Student11$Sex" value="1" checked="checked" disabled="disabled" /><label for="Student11_Sex_0">男</label></span><span disabled="disabled"><input id="Student11_Sex_1" type="radio" name="Student11$Sex" value="0" disabled="disabled" /><label for="Student11_Sex_1">女</label></span></span>
+        </td>
+        <td align="right" class="EdtTbBack">
+            出生日期：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <span id="Student11_BirthDay" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student11aBirthDay" id="txtStudent11aBirthDay" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="1996-09-16" style="Width:83px" /></span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            民族：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student11$National" id="Student11_National" disabled="disabled">
+	<option value=""></option>
+	<option selected="selected" value="MZDM001">汉</option>
+	<option value="MZDM002">满</option>
+	<option value="MZDM003">壮</option>
+	<option value="MZDM004">回</option>
+	<option value="MZDM005">苗</option>
+	<option value="MZDM006">维吾尔</option>
+	<option value="MZDM007">彝</option>
+	<option value="MZDM008">土家</option>
+	<option value="MZDM009">蒙古</option>
+	<option value="MZDM010">藏</option>
+	<option value="MZDM011">布依</option>
+	<option value="MZDM012">侗</option>
+	<option value="MZDM013">瑶</option>
+	<option value="MZDM014">朝鲜</option>
+	<option value="MZDM016">哈尼</option>
+	<option value="MZDM017">白</option>
+	<option value="MZDM018">黎</option>
+	<option value="MZDM019">哈萨克</option>
+	<option value="MZDM020">傣</option>
+	<option value="MZDM021">畲</option>
+	<option value="MZDM022">傈僳</option>
+	<option value="MZDM023">东乡</option>
+	<option value="MZDM024">拉祜</option>
+	<option value="MZDM025">佤</option>
+	<option value="MZDM026">水</option>
+	<option value="MZDM027">纳西</option>
+	<option value="MZDM028">羌</option>
+	<option value="MZDM029">土</option>
+	<option value="MZDM030">锡伯</option>
+	<option value="MZDM031">仫佬</option>
+	<option value="MZDM032">柯尔克孜</option>
+	<option value="MZDM033">达斡尔</option>
+	<option value="MZDM034">景颇</option>
+	<option value="MZDM035">撒拉</option>
+	<option value="MZDM036">布朗</option>
+	<option value="MZDM037">毛南</option>
+	<option value="MZDM038">塔吉克</option>
+	<option value="MZDM039">普米</option>
+	<option value="MZDM040">阿昌</option>
+	<option value="MZDM041">怒</option>
+	<option value="MZDM042">鄂温克</option>
+	<option value="MZDM043">京</option>
+	<option value="MZDM044">基诺</option>
+	<option value="MZDM045">德昂</option>
+	<option value="MZDM046">乌孜别克</option>
+	<option value="MZDM047">俄罗斯</option>
+	<option value="MZDM048">裕固</option>
+	<option value="MZDM049">保安</option>
+	<option value="MZDM050">门巴</option>
+	<option value="MZDM051">鄂伦春</option>
+	<option value="MZDM052">独龙</option>
+	<option value="MZDM053">塔塔尔</option>
+	<option value="MZDM054">赫哲</option>
+	<option value="MZDM055">高山</option>
+	<option value="MZDM056">珞巴</option>
+	<option value="MZDM057">仡佬</option>
+	<option value="MZDM058">穿青</option>
+</select>
+        </td>
+        <td align="right" class="EdtTbBack">
+            政治面貌：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student11$Polity" id="Student11_Polity" disabled="disabled">
+	<option value=""></option>
+	<option value="ZZMM004">中共党员</option>
+	<option value="ZZMM002">预备党员</option>
+	<option selected="selected" value="ZZMM003">共青团员</option>
+	<option value="ZZMM006">民主党派</option>
+	<option value="ZZMM005">群众</option>
+	<option value="ZZMM007">其他</option>
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            籍贯：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student11$NativePlace" type="text" id="Student11_NativePlace" maxlength="20" style="width: 152px" disabled="disabled" value="中国" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            入学时间：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <span id="Student11_InTime" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student11aInTime" id="txtStudent11aInTime" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+        </td>
+    </tr>
+</table>
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="biaoge">
+                            <tr>
+                                <td height="25">
+                                    <table width="100%" border="1" cellpadding="3" cellspacing="0" bordercolor="#0677bb"
+                                        frame="void" style="border-collapse: collapse;">
+                                        <tr>
+                                            <td height="25" align="right" class="EdtTbBack">
+                                                生源地：
+                                            </td>
+                                            <td width="86%" bgcolor="#FFFFFF">
+                                                <select name="province" id="province" onchange="setCity(this.value);getArea();" disabled="disabled">
+</select>
+                                                <select name="city" id="city" onchange="setCounty(this.value);getArea();" disabled="disabled">
+</select>
+                                                <select name="county" id="county" onchange="getArea();" disabled="disabled">
+</select>
+                                                <span style="color: #ff0000">*</span>
+                                                <input name="area" type="hidden" id="area" onchange="setArea();" style="width: 23px" value="511528" />
+                                                <input name="ComeWhere1" type="hidden" id="ComeWhere1" style="width: 13px" value="四川省宜宾市兴文县" />
+                                                <input name="A1" type="hidden" id="A1" style="width: 10px" />
+                                                <input name="A2" type="hidden" id="A2" style="width: 8px" />
+                                                <input name="A3" type="hidden" id="A3" style="width: 8px" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="TableBlack">
+    <tr>
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            身份证号码：
+        </td>
+        <td width="33%" bgcolor="#FFFFFF">
+            <input name="Student21$IdCard" type="text" id="Student21_IdCard" maxlength="20" size="30" disabled="disabled" value="511528199607162854" />
+        </td>
+        <td width="14%" align="right" class="EdtTbBack">
+            户口类型：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <span id="Student21_FamillyReg" disabled="disabled"><span disabled="disabled"><input id="Student21_FamillyReg_0" type="radio" name="Student21$FamillyReg" value="1" checked="checked" disabled="disabled" /><label for="Student21_FamillyReg_0">农村</label></span><span disabled="disabled"><input id="Student21_FamillyReg_1" type="radio" name="Student21$FamillyReg" value="2" disabled="disabled" /><label for="Student21_FamillyReg_1">城镇</label></span></span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            考生类别：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student21$ExamineeType" id="Student21_ExamineeType" disabled="disabled">
+	<option value="应届">应届</option>
+	<option selected="selected" value="往届">往届</option>
+</select>
+        </td>
+        <td align="right" class="EdtTbBack">
+            录取类型：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student21$GetType1" id="Student21_GetType1" disabled="disabled">
+	<option value=""></option>
+	<option selected="selected" value="0001029001">统招</option>
+	<option value="0001029002">委培</option>
+	<option value="0001029003">定向</option>
+	<option value="0001029004">其它</option>
+	<option value="0001029005">高端技能型</option>
+	<option value="0001029006">国防</option>
+	<option value="0001029007">南疆援疆</option>
+	<option value="0001029008">内地西藏班</option>
+	<option value="0001029009">艺术</option>
+	<option value="0001029010">预科直升</option>
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            考生号：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student21$ExamineeNo" type="text" id="Student21_ExamineeNo" maxlength="40" style="width: 164px" disabled="disabled" value="16511209161367" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            学前单位：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student21$UnitSchool" type="text" id="Student21_UnitSchool" maxlength="50" style="width: 175px" disabled="disabled" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            一卡通号：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student21$OneCard" type="text" id="Student21_OneCard" maxlength="25" style="width: 213px" disabled="disabled" value="2016043038" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            是否保险：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student21$IfBX" type="checkbox" id="Student21_IfBX" disabled="disabled" checked="checked" />
+            已买保险
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            银行名称：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student21$BankName" id="Student21_BankName" disabled="disabled">
+	<option selected="selected" value="YHLB001">中国银行</option>
+	<option value="YHLB002">中国农业银行</option>
+	<option value="YHLB005">中国交通银行</option>
+</select>
+        </td>
+        <td align="right" class="EdtTbBack">
+            银行帐号：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student21$BankNo" type="text" id="Student21_BankNo" maxlength="25" style="width: 213px" disabled="disabled" value="6217903100025123720" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            是国防生：
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <input name="Student21$IfCountry" type="checkbox" id="Student21_IfCountry" onclick="CheckIfCountryInfo();" disabled="disabled" />
+            是国防生(<span style="color: #CC0000;">选中后可填中队信息</span>) &nbsp;&nbsp; 中队信息：<input name="Student21$CountryInfo" type="text" id="Student21_CountryInfo" maxlength="50" style="width: 264px" disabled="disabled" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student21_LbPhoto" style="color:Red;">上传照片：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <input type="file" name="Student21$PhotoUpload" id="Student21_PhotoUpload" style="width:278px;" />
+            <span disabled="disabled"><input id="Student21_DelOld" type="checkbox" name="Student21$DelOld" disabled="disabled" /><label for="Student21_DelOld">删除现有照片</label></span>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+
+    function CheckIfCountryInfo() {
+        if (document.getElementById("Student21_IfCountry").checked)
+            document.getElementById("Student21_CountryInfo").readOnly = false;
+        else
+            document.getElementById("Student21_CountryInfo").readOnly = true;
+    }
+    CheckIfCountryInfo();
+</script>
+
+                        
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="TableBlack">
+    <tr>
+        <td colspan="4" class="EdtTitleTbBack">
+            &nbsp;个人联系方式
+        </td>
+    </tr>
+    <tr>
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            <span id="Student31_LbMoveTel" style="color:Red;">本人移动电话：</span>
+        </td>
+        <td width="33%" bgcolor="#FFFFFF">
+            <input name="Student31$MoveTel" type="text" id="Student31_MoveTel" maxlength="50" value="18227249126" />
+        </td>
+        <td width="14%" align="right" class="EdtTbBack">
+            <span id="Student31_LbEmail" style="color:Red;">电子邮件：</span>
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student31$Email" type="text" id="Student31_Email" maxlength="50" size="30" />
+            <span id="Student31_RegularExpressionValidator1" style="color:Red;visibility:hidden;">格式错误</span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student31_LbQQCard" style="color:Red;">QQ号码：</span>
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student31$QQCard" type="text" id="Student31_QQCard" maxlength="20" value="2413067759" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            &nbsp;
+        </td>
+        <td bgcolor="#FFFFFF">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+
+                        
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="TableBlack">
+    <tr>
+        <td colspan="4" class="EdtTitleTbBack">
+            &nbsp;家庭信息
+        </td>
+    </tr>
+    <tr>
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            父亲姓名：
+        </td>
+        <td width="33%" bgcolor="#FFFFFF">
+            <input name="Student41$FatherName" type="text" id="Student41_FatherName" maxlength="25" disabled="disabled" value="刘光强" />
+        </td>
+        <td width="14%" align="right" class="EdtTbBack">
+            母亲姓名：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$MotherName" type="text" id="Student41_MotherName" maxlength="25" disabled="disabled" value="许西容" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            父亲工作单位：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$FatherUnit" type="text" id="Student41_FatherUnit" maxlength="50" size="30" disabled="disabled" value="无" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            母亲工作单位：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$MotherUnit" type="text" id="Student41_MotherUnit" maxlength="50" size="30" disabled="disabled" value="无" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            父亲电话号码：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$FatherTel" type="text" id="Student41_FatherTel" maxlength="25" disabled="disabled" value="18990976752" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            母亲电话号码：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$MotherTel" type="text" id="Student41_MotherTel" maxlength="25" disabled="disabled" value="18990971785" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            家庭地址：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$FamilyAddress" type="text" id="Student41_FamilyAddress" maxlength="75" size="30" style="width: 80%" disabled="disabled" value="四川省宜宾市兴文县共乐镇双河村二组" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            家庭邮编：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$FamillyPost" type="text" id="Student41_FamillyPost" maxlength="6" disabled="disabled" value="644404" />
+            <span id="Student41_RangeValidator2" style="color:Red;visibility:hidden;">格式错误</span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            家庭电话：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student41$FamillyTel" type="text" id="Student41_FamillyTel" maxlength="25" disabled="disabled" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            &nbsp;
+        </td>
+        <td bgcolor="#FFFFFF">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+
+                        
+<table width="100%" border="0" cellspacing="1" cellpadding="3" class="TableBlack">
+    <tr>
+        <td colspan="4" class="EdtTitleTbBack">
+            &nbsp;在校信息
+        </td>
+    </tr>
+    <tr>
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            学生类型：
+        </td>
+        <td width="33%" bgcolor="#FFFFFF">
+            <select name="Student51$SpeType" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;Student51$SpeType\&#39;,\&#39;\&#39;)&#39;, 0)" id="Student51_SpeType" disabled="disabled">
+	<option value="D">博士</option>
+	<option value="S">硕士</option>
+	<option selected="selected" value="B">本科</option>
+	<option value="Z">专科</option>
+
+</select>
+            <span style="color: #ff0000">**</span>
+            <span id="Student51_RequiredFieldValidator3" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+        <td width="14%" align="right" class="EdtTbBack">
+            在校状态：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student51$InStatus" id="Student51_InStatus" disabled="disabled">
+	<option selected="selected" value="1">在校</option>
+	<option value="2">休学</option>
+	<option value="3">未入学</option>
+	<option value="4">国内实习</option>
+	<option value="5">国外实习</option>
+	<option value="7">退学</option>
+	<option value="8">开除学籍</option>
+	<option value="6">已毕业</option>
+	<option value="9">走读</option>
+	<option value="10">延期</option>
+	<option value="11">转校</option>
+	<option value="12">应征入伍</option>
+</select>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            院系：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student51$CollegeNo" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;Student51$CollegeNo\&#39;,\&#39;\&#39;)&#39;, 0)" id="Student51_CollegeNo" disabled="disabled">
+	<option value="02">电子工程学院</option>
+	<option value="07">控制工程学院</option>
+	<option value="10">通信工程学院</option>
+	<option value="11">外国语学院</option>
+	<option value="06">应用数学学院</option>
+	<option value="01">大气科学学院</option>
+	<option selected="selected" value="04">资源环境学院</option>
+	<option value="05">计算机学院</option>
+	<option value="08">软件工程学院</option>
+	<option value="12">网络空间安全学院</option>
+	<option value="03">光电技术学院</option>
+	<option value="20">统计学院</option>
+	<option value="96">管理学院</option>
+	<option value="94">商学院</option>
+	<option value="90">文化艺术学院</option>
+	<option value="92">物流学院</option>
+
+</select>
+            <span style="color: #ff0000">**</span>
+            <span id="Student51_RequiredFieldValidator4" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+        <td align="right" class="EdtTbBack">
+            专业：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student51$SpecialtyNo" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;Student51$SpecialtyNo\&#39;,\&#39;\&#39;)&#39;, 0)" id="Student51_SpecialtyNo" disabled="disabled">
+	<option value="B0406">地理信息科学</option>
+	<option value="B0407">资环-3S集成与气象应用</option>
+	<option value="B0408">资环-环境工程</option>
+	<option value="B041010">环境工程</option>
+	<option value="B041030">地理信息系统</option>
+	<option selected="selected" value="B041090">遥感科学与技术</option>
+	<option value="B0475">环境科学</option>
+	<option value="B0476">测绘工程</option>
+
+</select>
+            <span style="color: #ff0000">**</span>
+            <span id="Student51_RequiredFieldValidator6" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            年级：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student51$Grade" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;Student51$Grade\&#39;,\&#39;\&#39;)&#39;, 0)" id="Student51_Grade" disabled="disabled">
+	<option selected="selected" value="2016">2016级</option>
+	<option value="2015">2015级</option>
+	<option value="2014">2014级</option>
+	<option value="2013">2013级</option>
+	<option value="2012">2012级</option>
+	<option value="2011">2011级</option>
+	<option value="2010">2010级</option>
+	<option value="2009">2009级</option>
+	<option value="2008">2008级</option>
+	<option value="2007">2007级</option>
+	<option value="2006">2006级</option>
+	<option value="2005">2005级</option>
+
+</select>
+            <span style="color: #ff0000">**</span>
+            <span id="Student51_RequiredFieldValidator5" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+        <td align="right" class="EdtTbBack">
+            班级：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <select name="Student51$ClassNo" id="Student51_ClassNo" disabled="disabled">
+	<option value=""></option>
+	<option selected="selected" value="B041090201601">2016级遥感科学与技术1班</option>
+</select>
+            <span style="color: #ff0000">**</span>
+            <span id="Student51_RequiredFieldValidator7" style="color:Red;visibility:hidden;">必填项</span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            宿舍地址：
+        </td>
+        <td bgcolor="#FFFFFF" colspan="3">
+            <select name="Student51$SchoolYard" id="Student51_SchoolYard" disabled="disabled">
+	<option selected="selected" value=""></option>
+</select>
+            园区
+            <select name="Student51$FloorNo" id="Student51_FloorNo" disabled="disabled">
+	<option selected="selected" value=""></option>
+</select>
+            栋
+            <input name="Student51$DormAddress" type="text" id="Student51_DormAddress" maxlength="20" style="width: 105px" title="请输入寝室号码" disabled="disabled" />
+            号宿舍
+            <input name="Student51$IfDorm" type="checkbox" id="Student51_IfDorm" disabled="disabled" />
+            是否宿舍长
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            宿舍电话：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student51$DormTel" type="text" id="Student51_DormTel" maxlength="25" disabled="disabled" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            学生手册成绩：
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student51$StuScore" type="text" id="Student51_StuScore" maxlength="25" style="width: 80px" disabled="disabled" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student51_LbCETNum" style="color:Red;">外语水平：</span>
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student51$CETNum" type="text" id="Student51_CETNum" maxlength="25" style="width: 122px" />
+        </td>
+        <td align="right" class="EdtTbBack">
+            <span id="Student51_LbNCRENum" style="color:Red;">NCRE级别：</span>
+        </td>
+        <td bgcolor="#FFFFFF">
+            <input name="Student51$NCRENum" type="text" id="Student51_NCRENum" maxlength="25" style="width: 155px" />
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            本学期欠费金额：
+        </td>
+        <td bgcolor="#FFFFFF" colspan="3">
+            学年：
+            <select name="Student51$TermNo" id="Student51_TermNo" disabled="disabled">
+	<option selected="selected" value=""></option>
+	<option value="2016-2017">2016-2017学年</option>
+	<option value="2015-2016">2015-2016学年</option>
+	<option value="2014-2015">2014-2015学年</option>
+	<option value="2013-2014">2013-2014学年</option>
+	<option value="2012-2013">2012-2013学年</option>
+	<option value="2011-2012">2011-2012学年</option>
+	<option value="2010-2011">2010-2011学年</option>
+	<option value="2009-2010">2009-2010学年</option>
+	<option value="2008-2009">2008-2009学年</option>
+	<option value="2007-2008">2007-2008学年</option>
+	<option value="2006-2007">2006-2007学年</option>
+	<option value="2005-2006">2005-2006学年</option>
+	<option value="2005-2005">2005-2005学年</option>
+</select>
+            欠费金额：
+            <input name="Student51$Arrearage" type="text" id="Student51_Arrearage" maxlength="25" style="width: 80px" disabled="disabled" />
+            <input name="Student51$IfArrearage" type="checkbox" id="Student51_IfArrearage" onclick="CheckIfArrearage();" disabled="disabled" />
+            是否欠费(<span style="color: #ff0000">选择后可输入</span>)
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            历史欠费情况：
+        </td>
+        <td bgcolor="#FFFFFF" colspan="3">
+            <span style="font-family: 幼圆">
+                <input name="Student51$ArrearageThing" type="text" id="Student51_ArrearageThing" maxlength="150" style="width: 90%" disabled="disabled" />
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack">
+            入党情况：
+        </td>
+        <td bgcolor="#FFFFFF" colspan="3">
+            <span disabled="disabled"><input id="Student51_IfRDBook" type="checkbox" name="Student51$IfRDBook" disabled="disabled" /><label for="Student51_IfRDBook">已提交入党申请书</label></span>
+            &nbsp; 提交入党申请书时间：<span id="Student51_RDBookDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDBookDate" id="txtStudent51aRDBookDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+            <br />
+            <span disabled="disabled"><input id="Student51_IfRDExcel" type="checkbox" name="Student51$IfRDExcel" disabled="disabled" /><label for="Student51_IfRDExcel">已填写推优表</label></span>
+            &nbsp; 推优表填写时间：<span id="Student51_RDExcelDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDExcelDate" id="txtStudent51aRDExcelDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+            <br />
+            <span disabled="disabled"><input id="Student51_IfRDActive" type="checkbox" name="Student51$IfRDActive" disabled="disabled" /><label for="Student51_IfRDActive">已确定为入党积极份子</label></span>
+            &nbsp; 确定为入党积极份子时间：<span id="Student51_RDActiveDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDActiveDate" id="txtStudent51aRDActiveDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+            <br />
+            <span disabled="disabled"><input id="Student51_IfRDOverBook" type="checkbox" name="Student51$IfRDOverBook" disabled="disabled" /><label for="Student51_IfRDOverBook">已取得党校结业证</label></span>
+            &nbsp; 取得党校结业证时间：<span id="Student51_RDOverBookDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDOverBookDate" id="txtStudent51aRDOverBookDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+            <br />
+            <span disabled="disabled"><input id="Student51_IfRDPre" type="checkbox" name="Student51$IfRDPre" disabled="disabled" /><label for="Student51_IfRDPre">已发展为预备党员</label></span>
+            &nbsp; 发展为预备党员时间：<span id="Student51_RDPreDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDPreDate" id="txtStudent51aRDPreDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+            <br />
+            <span disabled="disabled"><input id="Student51_IfRDTrue" type="checkbox" name="Student51$IfRDTrue" disabled="disabled" /><label for="Student51_IfRDTrue">已转为正式党员</label></span>
+            &nbsp; 转为正式党员时间：<span id="Student51_RDTrueDate" disabled="disabled" style="display:inline-block;width:83px;"><input type="text" name="Student51aRDTrueDate" id="txtStudent51aRDTrueDate" maxlength="12" readonly="True" onkeypress="if(!KeyIsNumber(event.keyCode))return false;" value="" style="Width:83px" /></span>
+        </td>
+    </tr>
+    <tr>
+        <td height="25" align="right" class="EdtTbBack" rowspan="2">
+            <span style="color: #FF0000; font-weight: bold;">党员学生毕业时填写：</span>
+        </td>
+        <td bgcolor="#FFFFFF" colspan="3">
+            党组织关系介绍信抬头：<input name="Student51$LetterTile" type="text" id="Student51_LetterTile" maxlength="50" style="width: 50%;" />
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#FFFFFF" colspan="3">
+            党组织关系介绍信转往单位名称：<input name="Student51$LetterAddress" type="text" id="Student51_LetterAddress" maxlength="100" style="width: 50%;" />
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+    function CheckIfArrearage() {
+        document.getElementById("Student51_IfArrearage").value
+        if (document.getElementById("Student51_IfArrearage").checked) {
+            document.getElementById("Student51_Arrearage").readOnly = false;
+            document.getElementById("Student51_TermNo").disabled = false;
+        }
+        else {
+            document.getElementById("Student51_Arrearage").readOnly = true;
+            document.getElementById("Student51_TermNo").disabled = true;
+        }
+    }
+    CheckIfArrearage();
+</script>
+
+                        
+<table width="100%" border="0" cellpadding="1" cellspacing="1" class="TableBlack">
+    <tr style="font-family: Times New Roman">
+        <td height="25" colspan="4" class="EdtTitleTbBack">
+            &nbsp;其他信息
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td width="14%" height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbDutyThing" style="color:Red;">学生干部经历：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <textarea name="Student61$DutyThing" id="Student61_DutyThing" style="width: 100%; height: 127px"></textarea>
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbPalmThing" style="color:Red;">获奖情况：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <textarea name="Student61$PalmThing" id="Student61_PalmThing" cols="60" rows="5" style="width: 100%; height: 127px"></textarea>
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbScientificFruit" style="color:Red;">科研经历：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <textarea name="Student61$ScientificFruit" id="Student61_ScientificFruit" cols="60" rows="5" style="width: 100%;
+                height: 127px"></textarea>
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbPractice" style="color:Red;">社会实践情况：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF" style="font-family: Times New Roman">
+            <textarea name="Student61$Practice" id="Student61_Practice" cols="60" rows="5" style="width: 100%; height: 127px"></textarea>
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbStrongSuit" style="color:Red;">特长：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <textarea name="Student61$StrongSuit" id="Student61_StrongSuit" cols="60" rows="5" style="width: 100%; height: 127px"></textarea>
+        </td>
+    </tr>
+    <tr style="font-family: Times New Roman">
+        <td height="25" align="right" class="EdtTbBack">
+            <span id="Student61_LbOtherThing" style="color:Red;">其它说明：</span>
+        </td>
+        <td colspan="3" bgcolor="#FFFFFF">
+            <textarea name="Student61$OtherThing" id="Student61_OtherThing" cols="60" rows="5" style="width: 100%; height: 127px"></textarea>
+        </td>
+    </tr>
+</table>
+
+                    </td>
+                    <td width="15">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("Student11_RequiredFieldValidator1"), document.getElementById("Student11_RequiredFieldValidator2"), document.getElementById("Student31_RegularExpressionValidator1"), document.getElementById("Student41_RangeValidator2"), document.getElementById("Student51_RequiredFieldValidator3"), document.getElementById("Student51_RequiredFieldValidator4"), document.getElementById("Student51_RequiredFieldValidator6"), document.getElementById("Student51_RequiredFieldValidator5"), document.getElementById("Student51_RequiredFieldValidator7"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var Student11_RequiredFieldValidator1 = document.all ? document.all["Student11_RequiredFieldValidator1"] : document.getElementById("Student11_RequiredFieldValidator1");
+Student11_RequiredFieldValidator1.controltovalidate = "Student11_StudentNo";
+Student11_RequiredFieldValidator1.errormessage = "必填项";
+Student11_RequiredFieldValidator1.enabled = "False";
+Student11_RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student11_RequiredFieldValidator1.initialvalue = "";
+var Student11_RequiredFieldValidator2 = document.all ? document.all["Student11_RequiredFieldValidator2"] : document.getElementById("Student11_RequiredFieldValidator2");
+Student11_RequiredFieldValidator2.controltovalidate = "Student11_StudentName";
+Student11_RequiredFieldValidator2.errormessage = "必填项";
+Student11_RequiredFieldValidator2.enabled = "False";
+Student11_RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student11_RequiredFieldValidator2.initialvalue = "";
+var Student31_RegularExpressionValidator1 = document.all ? document.all["Student31_RegularExpressionValidator1"] : document.getElementById("Student31_RegularExpressionValidator1");
+Student31_RegularExpressionValidator1.controltovalidate = "Student31_Email";
+Student31_RegularExpressionValidator1.errormessage = "格式错误";
+Student31_RegularExpressionValidator1.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+Student31_RegularExpressionValidator1.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+var Student41_RangeValidator2 = document.all ? document.all["Student41_RangeValidator2"] : document.getElementById("Student41_RangeValidator2");
+Student41_RangeValidator2.controltovalidate = "Student41_FamillyPost";
+Student41_RangeValidator2.errormessage = "格式错误";
+Student41_RangeValidator2.enabled = "False";
+Student41_RangeValidator2.evaluationfunction = "RangeValidatorEvaluateIsValid";
+Student41_RangeValidator2.maximumvalue = "999999";
+Student41_RangeValidator2.minimumvalue = "000000";
+var Student51_RequiredFieldValidator3 = document.all ? document.all["Student51_RequiredFieldValidator3"] : document.getElementById("Student51_RequiredFieldValidator3");
+Student51_RequiredFieldValidator3.controltovalidate = "Student51_SpeType";
+Student51_RequiredFieldValidator3.errormessage = "必填项";
+Student51_RequiredFieldValidator3.enabled = "False";
+Student51_RequiredFieldValidator3.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student51_RequiredFieldValidator3.initialvalue = "";
+var Student51_RequiredFieldValidator4 = document.all ? document.all["Student51_RequiredFieldValidator4"] : document.getElementById("Student51_RequiredFieldValidator4");
+Student51_RequiredFieldValidator4.controltovalidate = "Student51_CollegeNo";
+Student51_RequiredFieldValidator4.errormessage = "必填项";
+Student51_RequiredFieldValidator4.enabled = "False";
+Student51_RequiredFieldValidator4.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student51_RequiredFieldValidator4.initialvalue = "";
+var Student51_RequiredFieldValidator6 = document.all ? document.all["Student51_RequiredFieldValidator6"] : document.getElementById("Student51_RequiredFieldValidator6");
+Student51_RequiredFieldValidator6.controltovalidate = "Student51_SpecialtyNo";
+Student51_RequiredFieldValidator6.errormessage = "必填项";
+Student51_RequiredFieldValidator6.enabled = "False";
+Student51_RequiredFieldValidator6.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student51_RequiredFieldValidator6.initialvalue = "";
+var Student51_RequiredFieldValidator5 = document.all ? document.all["Student51_RequiredFieldValidator5"] : document.getElementById("Student51_RequiredFieldValidator5");
+Student51_RequiredFieldValidator5.controltovalidate = "Student51_Grade";
+Student51_RequiredFieldValidator5.errormessage = "必填项";
+Student51_RequiredFieldValidator5.enabled = "False";
+Student51_RequiredFieldValidator5.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student51_RequiredFieldValidator5.initialvalue = "";
+var Student51_RequiredFieldValidator7 = document.all ? document.all["Student51_RequiredFieldValidator7"] : document.getElementById("Student51_RequiredFieldValidator7");
+Student51_RequiredFieldValidator7.controltovalidate = "Student51_ClassNo";
+Student51_RequiredFieldValidator7.errormessage = "必填项";
+Student51_RequiredFieldValidator7.enabled = "False";
+Student51_RequiredFieldValidator7.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+Student51_RequiredFieldValidator7.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+</html>
+<script language="JavaScript">
+    fillCity();
+    setArea();
+    function GetArea() {
+        var province = document.getElementById("province");
+        var city = document.getElementById("city");
+        var county = document.getElementById("county");
+        Student.ComeWhere.value = province.options[province.selectedIndex].innerText + city.options[city.selectedIndex].innerText + county.options[county.selectedIndex].innerText;
+    }
+</script>

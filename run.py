@@ -103,7 +103,7 @@ def run():
     :return:
     """
     # 获取学号信息并保存
-    # handle_id_info()
+    handle_id_info()
     if init_redis_flag == "1":
         # 从mongodb数据库初始化数据到redis
         if not init_redis():

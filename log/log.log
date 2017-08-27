@@ -1,13 +1,24 @@
-2017-08-23 22:44:55,566 - utils.py[line:55] - INFO: 初始化redis数据完成
-2017-08-23 22:44:55,568 - utils.py[line:55] - INFO: 开始登录中...
-2017-08-23 22:44:55,582 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-23 22:44:55,768 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /UserLogin.html HTTP/1.1" 200 3219
-2017-08-23 22:44:55,844 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-23 22:44:55,855 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-23 22:44:56,057 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "GET /default3.html HTTP/1.1" 200 2223
-2017-08-23 22:44:56,142 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/default3.html
-2017-08-23 22:44:56,466 - utils.py[line:55] - INFO: 验证码识别成功-->captcha\img\xgw\49acc0938c528b0b0aa6ba23d99e7c49.jpg:67524
-2017-08-23 22:44:56,484 - connectionpool.py[line:207] - DEBUG: Starting new HTTP connection (1): xsc.cuit.edu.cn
-2017-08-23 22:44:56,682 - connectionpool.py[line:395] - DEBUG: http://xsc.cuit.edu.cn:80 "POST /UserLogin.html HTTP/1.1" 200 3259
-2017-08-23 22:44:56,770 - utils.py[line:55] - INFO: 下载网页成功: http://xsc.cuit.edu.cn/UserLogin.html
-2017-08-23 22:44:56,773 - utils.py[line:55] - INFO: 登录成功 -->[ERROR_CODE:10]
+2017-08-24 19:47:57,901 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session {"capabilities": {"alwaysMatch": {"browserName": "chrome"}, "firstMatch": [{}]}, "desiredCapabilities": {"browserName": "chrome", "chromeOptions": {"extensions": [], "args": []}, "platform": "ANY", "version": ""}}
+2017-08-24 19:47:58,464 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:47:58,466 - remote_connection.py[line:478] - DEBUG: DELETE http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/cookie {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d"}
+2017-08-24 19:47:59,889 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:47:59,890 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/url {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "url": "http://jxgl.cuit.edu.cn/JXGL/xs/MainMenu.asp"}
+2017-08-24 19:48:06,978 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:06,980 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/timeouts/implicit_wait {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "ms": 2000.0}
+2017-08-24 19:48:06,984 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:06,985 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/execute {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "args": [], "script": "document.getElementById(\"txtId\").value = \"2013123069\";"}
+2017-08-24 19:48:07,000 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:07,001 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/execute {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "args": [], "script": "document.getElementById(\"txtMM\").value = \"19940807qQ\";"}
+2017-08-24 19:48:07,010 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,523 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/screenshot {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d"}
+2017-08-24 19:48:09,744 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,749 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "using": "id", "value": "verifypic"}
+2017-08-24 19:48:09,769 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,770 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element/0.43396442383527756-1/location {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "id": "0.43396442383527756-1"}
+2017-08-24 19:48:09,777 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,778 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "using": "id", "value": "verifypic"}
+2017-08-24 19:48:09,794 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,794 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element/0.43396442383527756-1/size {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "id": "0.43396442383527756-1"}
+2017-08-24 19:48:09,803 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-24 19:48:09,935 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IHDR' 16 13
+2017-08-24 19:48:09,935 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IDAT' 41 8192

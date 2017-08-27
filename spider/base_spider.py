@@ -94,7 +94,7 @@ class BaseSpider(object):
         """
         m = hashlib.md5()
         if time_flag:
-            time_str = str(time.time())
+            time_str = str(time.time()).encode("utf-8")
             m.update(time_str)
         else:
             m.update(content)

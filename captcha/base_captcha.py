@@ -5,6 +5,8 @@ import os
 from PIL import Image, ImageEnhance, ImageFilter
 from pytesseract import *
 
+from captcha import handle
+
 
 class BaseCaptcha(object):
     """
@@ -52,7 +54,7 @@ class BaseCaptcha(object):
         """
         try:
             if self._pic_dir is None:
-                pic_dir = "./img/"
+                pic_dir = "./img/jwc/"
             else:
                 pic_dir = self._pic_dir
             if not os.path.exists(pic_dir):
@@ -71,6 +73,7 @@ class BaseCaptcha(object):
         # 切换目录
         if not self.__turn_dir():
             return "FAIL_DIR"
+
         # 二值化
         self._binaryzation()
         try:
@@ -81,11 +84,16 @@ class BaseCaptcha(object):
             imgry = im.convert('L')
             # 保存图像
             imgry.save('g_' + pic_name)
+            # 降噪
+            # self._clear_noise(imgry)
+
             # 二值化，采用阈值分割法，threshold为分割点
             out = imgry.point(self._table, '1')
             out.save('b_' + pic_name)
+            no_noise = self._clear_noise(out)
+            # no_noise.save('n_' + pic_name)
             # 识别
-            text = image_to_string(out)
+            text = image_to_string(no_noise)
             # 识别对吗
             text = text.strip()
             text = text.upper()
@@ -98,3 +106,12 @@ class BaseCaptcha(object):
             os.chdir(self.__curdir)  # 切回原目录
             return text
 
+    def _clear_noise(self, img):
+        """
+        图片降噪
+        :return:
+        """
+        g = 1
+        n = 5
+        z = 80
+        return handle.clearNoise(img, g, n, z)
