@@ -13,7 +13,7 @@ from data_type import SITE_TYPE_JWC, SITE_TYPE_XGW, CAPTCHA_NUMBER, \
     DRIVER_TYPE_CHROME, DRIVER_TYPE_FIREFOX, DRIVER_TYPE_PHANTOMJS
 from config import local_config
 
-chromeDriver = "driver/chromedriver"
+chromeDriver = "driver/chromedriver1"
 os.environ["webdriver.chrome.driver"] = chromeDriver
 phantomjsDriver = "driver/phantomjs"
 os.environ["webdriver.phantomjs.driver"] = phantomjsDriver
@@ -98,7 +98,7 @@ class BaseSpider(object):
             m.update(time_str)
         else:
             m.update(content)
-        file_name = "%s.jpg" % (str(m.hexdigest()))
+        file_name = "%s.png" % (str(m.hexdigest()))
         return file_name
 
     def _save_captcha_identify_log(self, file_name, code, status_code, site_type=SITE_TYPE_XGW, code_type=CAPTCHA_NUMBER):

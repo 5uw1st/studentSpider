@@ -5,8 +5,6 @@ import os
 from PIL import Image, ImageEnhance, ImageFilter
 from pytesseract import *
 
-from captcha import handle
-
 
 class BaseCaptcha(object):
     """
@@ -19,11 +17,7 @@ class BaseCaptcha(object):
         self._pic_dir = pic_dir
         self.__curdir = os.getcwd()
         self._rep_dic = {
-            'O': '0',
-            'I': '1',
-            'L': '1',
-            'Z': '2',
-            'S': '8'
+            '?': '2',
         }
 
     def _set_rep_dict(self, rep_dic):
@@ -40,7 +34,7 @@ class BaseCaptcha(object):
         :return:
         """
         if self._table:
-            pass
+            return
         for i in range(256):
             if i < self._threshold:
                 self._table.append(0)
@@ -84,16 +78,18 @@ class BaseCaptcha(object):
             imgry = im.convert('L')
             # 保存图像
             imgry.save('g_' + pic_name)
-            # 降噪
-            # self._clear_noise(imgry)
 
             # 二值化，采用阈值分割法，threshold为分割点
             out = imgry.point(self._table, '1')
             out.save('b_' + pic_name)
-            no_noise = self._clear_noise(out)
-            # no_noise.save('n_' + pic_name)
+            # 降噪
+            self._clear_noise(out)
+            out.save('n_' + pic_name)
+            # 切割
+            self._get_crop_imgs(out)
+
             # 识别
-            text = image_to_string(no_noise)
+            text = image_to_string(out)
             # 识别对吗
             text = text.strip()
             text = text.upper()
@@ -111,7 +107,19 @@ class BaseCaptcha(object):
         图片降噪
         :return:
         """
-        g = 1
-        n = 5
-        z = 80
-        return handle.clearNoise(img, g, n, z)
+        raise NotImplemented
+
+    def _get_crop_imgs(self, img):
+        """
+        分割图片
+        :param img:
+        :return:
+        """
+        raise NotImplemented
+
+    def _get_path(self):
+        """
+        获取图片绝对路径
+        :return:
+        """
+        pass

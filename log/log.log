@@ -1,24 +1,68 @@
-2017-08-24 19:47:57,901 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session {"capabilities": {"alwaysMatch": {"browserName": "chrome"}, "firstMatch": [{}]}, "desiredCapabilities": {"browserName": "chrome", "chromeOptions": {"extensions": [], "args": []}, "platform": "ANY", "version": ""}}
-2017-08-24 19:47:58,464 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:47:58,466 - remote_connection.py[line:478] - DEBUG: DELETE http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/cookie {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d"}
-2017-08-24 19:47:59,889 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:47:59,890 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/url {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "url": "http://jxgl.cuit.edu.cn/JXGL/xs/MainMenu.asp"}
-2017-08-24 19:48:06,978 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:06,980 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/timeouts/implicit_wait {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "ms": 2000.0}
-2017-08-24 19:48:06,984 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:06,985 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/execute {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "args": [], "script": "document.getElementById(\"txtId\").value = \"2013123069\";"}
-2017-08-24 19:48:07,000 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:07,001 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/execute {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "args": [], "script": "document.getElementById(\"txtMM\").value = \"19940807qQ\";"}
-2017-08-24 19:48:07,010 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,523 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/screenshot {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d"}
-2017-08-24 19:48:09,744 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,749 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "using": "id", "value": "verifypic"}
-2017-08-24 19:48:09,769 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,770 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element/0.43396442383527756-1/location {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "id": "0.43396442383527756-1"}
-2017-08-24 19:48:09,777 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,778 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "using": "id", "value": "verifypic"}
-2017-08-24 19:48:09,794 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,794 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:50003/session/38ab2c8c7641d7d06582ae5058c89a1d/element/0.43396442383527756-1/size {"sessionId": "38ab2c8c7641d7d06582ae5058c89a1d", "id": "0.43396442383527756-1"}
-2017-08-24 19:48:09,803 - remote_connection.py[line:565] - DEBUG: Finished Request
-2017-08-24 19:48:09,935 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IHDR' 16 13
-2017-08-24 19:48:09,935 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IDAT' 41 8192
+2017-08-28 16:56:53,371 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session {"capabilities": {"firstMatch": [], "alwaysMatch": {"browserName": "chrome", "version": "", "platform": "ANY", "chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "chromeOptions": {"extensions": [], "args": []}}}
+2017-08-28 16:56:54,964 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:54,965 - remote_connection.py[line:478] - DEBUG: DELETE http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/cookie {"sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:56,023 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:56,024 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/url {"url": "http://jxgl.cuit.edu.cn/JXGL/xs/MainMenu.asp", "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:57,628 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:57,629 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/timeouts/implicit_wait {"ms": 2000.0, "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:57,634 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:57,635 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/execute {"script": "document.getElementById(\"txtId\").value = \"2013123069\";", "args": [], "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:57,646 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:57,647 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/execute {"script": "document.getElementById(\"txtMM\").value = \"19940807qQ\";", "args": [], "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:57,657 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:57,830 - Image.py[line:391] - DEBUG: Importing BmpImagePlugin
+2017-08-28 16:56:57,834 - Image.py[line:391] - DEBUG: Importing BufrStubImagePlugin
+2017-08-28 16:56:57,835 - Image.py[line:391] - DEBUG: Importing CurImagePlugin
+2017-08-28 16:56:57,835 - Image.py[line:391] - DEBUG: Importing DcxImagePlugin
+2017-08-28 16:56:57,837 - Image.py[line:391] - DEBUG: Importing DdsImagePlugin
+2017-08-28 16:56:57,837 - Image.py[line:391] - DEBUG: Importing EpsImagePlugin
+2017-08-28 16:56:57,851 - Image.py[line:391] - DEBUG: Importing FitsStubImagePlugin
+2017-08-28 16:56:57,852 - Image.py[line:391] - DEBUG: Importing FliImagePlugin
+2017-08-28 16:56:57,853 - Image.py[line:391] - DEBUG: Importing FpxImagePlugin
+2017-08-28 16:56:57,855 - Image.py[line:391] - DEBUG: Importing FtexImagePlugin
+2017-08-28 16:56:57,856 - Image.py[line:391] - DEBUG: Importing GbrImagePlugin
+2017-08-28 16:56:57,856 - Image.py[line:391] - DEBUG: Importing GifImagePlugin
+2017-08-28 16:56:57,858 - Image.py[line:391] - DEBUG: Importing GribStubImagePlugin
+2017-08-28 16:56:57,859 - Image.py[line:391] - DEBUG: Importing Hdf5StubImagePlugin
+2017-08-28 16:56:57,860 - Image.py[line:391] - DEBUG: Importing IcnsImagePlugin
+2017-08-28 16:56:57,863 - Image.py[line:391] - DEBUG: Importing IcoImagePlugin
+2017-08-28 16:56:57,863 - Image.py[line:391] - DEBUG: Importing ImImagePlugin
+2017-08-28 16:56:57,865 - Image.py[line:391] - DEBUG: Importing ImtImagePlugin
+2017-08-28 16:56:57,866 - Image.py[line:391] - DEBUG: Importing IptcImagePlugin
+2017-08-28 16:56:57,866 - Image.py[line:391] - DEBUG: Importing JpegImagePlugin
+2017-08-28 16:56:57,876 - Image.py[line:391] - DEBUG: Importing Jpeg2KImagePlugin
+2017-08-28 16:56:57,876 - Image.py[line:391] - DEBUG: Importing McIdasImagePlugin
+2017-08-28 16:56:57,877 - Image.py[line:391] - DEBUG: Importing MicImagePlugin
+2017-08-28 16:56:57,877 - Image.py[line:391] - DEBUG: Importing MpegImagePlugin
+2017-08-28 16:56:57,878 - Image.py[line:391] - DEBUG: Importing MpoImagePlugin
+2017-08-28 16:56:57,878 - Image.py[line:391] - DEBUG: Importing MspImagePlugin
+2017-08-28 16:56:57,879 - Image.py[line:391] - DEBUG: Importing PalmImagePlugin
+2017-08-28 16:56:57,880 - Image.py[line:391] - DEBUG: Importing PcdImagePlugin
+2017-08-28 16:56:57,881 - Image.py[line:391] - DEBUG: Importing PcxImagePlugin
+2017-08-28 16:56:57,881 - Image.py[line:391] - DEBUG: Importing PdfImagePlugin
+2017-08-28 16:56:57,881 - Image.py[line:391] - DEBUG: Importing PixarImagePlugin
+2017-08-28 16:56:57,882 - Image.py[line:391] - DEBUG: Importing PngImagePlugin
+2017-08-28 16:56:57,882 - Image.py[line:391] - DEBUG: Importing PpmImagePlugin
+2017-08-28 16:56:57,883 - Image.py[line:391] - DEBUG: Importing PsdImagePlugin
+2017-08-28 16:56:57,883 - Image.py[line:391] - DEBUG: Importing SgiImagePlugin
+2017-08-28 16:56:57,884 - Image.py[line:391] - DEBUG: Importing SpiderImagePlugin
+2017-08-28 16:56:57,885 - Image.py[line:391] - DEBUG: Importing SunImagePlugin
+2017-08-28 16:56:57,886 - Image.py[line:391] - DEBUG: Importing TgaImagePlugin
+2017-08-28 16:56:57,887 - Image.py[line:391] - DEBUG: Importing TiffImagePlugin
+2017-08-28 16:56:57,887 - Image.py[line:391] - DEBUG: Importing WebPImagePlugin
+2017-08-28 16:56:57,888 - Image.py[line:391] - DEBUG: Importing WmfImagePlugin
+2017-08-28 16:56:57,889 - Image.py[line:391] - DEBUG: Importing XbmImagePlugin
+2017-08-28 16:56:57,892 - Image.py[line:391] - DEBUG: Importing XpmImagePlugin
+2017-08-28 16:56:57,893 - Image.py[line:391] - DEBUG: Importing XVThumbImagePlugin
+2017-08-28 16:56:59,257 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/screenshot {"sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:59,613 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:59,614 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/element {"using": "id", "value": "verifypic", "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:59,636 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:59,636 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/element/0.06493637596002522-1/location {"id": "0.06493637596002522-1", "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:59,644 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:59,645 - remote_connection.py[line:478] - DEBUG: POST http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/element {"using": "id", "value": "verifypic", "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:59,652 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:59,652 - remote_connection.py[line:478] - DEBUG: GET http://127.0.0.1:59378/session/caff86d17435ccdfe60f0836d4357011/element/0.06493637596002522-1/size {"id": "0.06493637596002522-1", "sessionId": "caff86d17435ccdfe60f0836d4357011"}
+2017-08-28 16:56:59,659 - remote_connection.py[line:565] - DEBUG: Finished Request
+2017-08-28 16:56:59,661 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IHDR' 16 13
+2017-08-28 16:56:59,661 - PngImagePlugin.py[line:131] - DEBUG: STREAM b'IDAT' 41 8192
