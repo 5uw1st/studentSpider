@@ -78,6 +78,7 @@ class JWCSpider(WebdirverSpider):
         im = a.crop((left, top, right, bottom))
         im.save(self.code_file)
         time.sleep(1)
+        code = self.identify_captcha(self.code_file, site_type=SITE_TYPE_JWC)
         code = input("-->请输入验证码:")
         log("验证码:%s" % code)
         return code

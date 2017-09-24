@@ -13,7 +13,7 @@ from data_type import SITE_TYPE_JWC, SITE_TYPE_XGW, CAPTCHA_NUMBER, \
     DRIVER_TYPE_CHROME, DRIVER_TYPE_FIREFOX, DRIVER_TYPE_PHANTOMJS
 from config import local_config
 
-chromeDriver = "driver/chromedriver1"
+chromeDriver = "driver/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromeDriver
 phantomjsDriver = "driver/phantomjs"
 os.environ["webdriver.phantomjs.driver"] = phantomjsDriver
@@ -161,7 +161,10 @@ class WebdirverSpider(BaseSpider):
         :return:
         """
         if browser_type == DRIVER_TYPE_CHROME:
-            return webdriver.Chrome(chromeDriver)
+            if os.name == "nt":
+                return webdriver.Chrome(chromeDriver)
+            else:
+                return webdriver.Chrome()
         elif browser_type == DRIVER_TYPE_FIREFOX:
             pass
         elif browser_type == DRIVER_TYPE_PHANTOMJS:

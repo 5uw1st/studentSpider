@@ -11,7 +11,7 @@ class JWCCaptcha(BaseCaptcha):
     """
     教务处登录验证码识别类
     """
-    def __init__(self, pic_name, threshold=204, pic_dir=None):
+    def __init__(self, pic_name, threshold=204, pic_dir=PIC_PATH):
         super(JWCCaptcha, self).__init__(pic_name, threshold, pic_dir)
         pass
 
@@ -22,7 +22,7 @@ class JWCCaptcha(BaseCaptcha):
         """
         if self._table:
             return
-        pic_path = self._pic_name
+        pic_path = self._pic_name.split("\\")[-1]
         ret, th = handle.get_threshold(pic_path)
         self._threshold = ret
         for i in range(256):
@@ -44,7 +44,8 @@ class JWCCaptcha(BaseCaptcha):
     def _get_crop_imgs(self, img):
         child_imgs = handle.get_crop_imgs(img)
         for index, i in enumerate(child_imgs):
-            i.save("cut_%d.jpg" % (index+1))
+            pic_name = '../cut/%s_%d.jpg' % (self._pic_name.split("\\")[-1].split(".")[0], index+1)
+            i.save(pic_name)
 
 
 if __name__ == '__main__':

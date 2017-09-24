@@ -103,20 +103,20 @@ def run():
     :return:
     """
     # 获取学号信息并保存
-    handle_id_info()
-    if init_redis_flag == "1":
-        # 从mongodb数据库初始化数据到redis
-        if not init_redis():
-            return
-
-    while True:
-        # 取出一条记录
-        user_id = redis.lpop(id_key)
-        if user_id:
-            # 获取学生信息并保存
-            get_user_info(user_id, user_id)
-        else:
-            break
+    # handle_id_info()
+    # if init_redis_flag == "1":
+    #     # 从mongodb数据库初始化数据到redis
+    #     if not init_redis():
+    #         return
+    #
+    # while True:
+    #     # 取出一条记录
+    #     user_id = redis.lpop(id_key)
+    #     if user_id:
+    #         # 获取学生信息并保存
+    #         get_user_info(user_id, user_id)
+    #     else:
+    #         break
 
 
 if __name__ == '__main__':

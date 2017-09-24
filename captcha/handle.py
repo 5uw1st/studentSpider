@@ -6,6 +6,8 @@ import cv2
 
 
 def get_threshold(path):
+    base_path = os.getcwd()
+    path = os.path.join(base_path, path)
     image = cv2.imread(path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ret, th = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU)  # 方法选择为THRESH_OTSU
@@ -108,7 +110,7 @@ def get_crop_imgs(img):
             s_len += 1
             m += 1
         else:
-            if s_len >= 8:
+            if s_len >= 3:
                 if s_len >= 26:
                     child_img = img.crop((first, y, first + s_len//2, y + 28))
                     child_img_list.append(child_img)
